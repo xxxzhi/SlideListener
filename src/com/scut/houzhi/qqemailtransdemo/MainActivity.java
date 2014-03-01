@@ -1,15 +1,16 @@
 package com.scut.houzhi.qqemailtransdemo;
 
-import android.net.Uri;
-import android.os.Bundle;
-import android.app.Activity;
 import android.graphics.Color;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.Menu;
 
-public class MainActivity extends FragmentActivity implements BlankFragment.OnFragmentInteractionListener{
+import com.scut.houzhi.slidefragment.demo.Slide1FinishFragment;
+import com.scut.houzhi.slidefragment.SlideFinishFragment;
+
+public class MainActivity extends FragmentActivity implements SlideFinishFragment.OnFragmentWantFinishListener{
 	FragmentManager fragmentManager = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,18 +24,22 @@ public class MainActivity extends FragmentActivity implements BlankFragment.OnFr
 		FragmentTransaction transaction =fragmentManager.beginTransaction();
 		
 
-		transaction.add(R.id.content,new ViewFlipperFragment(), "flipper");
 		
-		
-		transaction.add(R.id.content,BlankFragment.newInstance(Color.BLUE, "First"), "first");
-		transaction.add(R.id.content,BlankFragment.newInstance(Color.GREEN, "green"), "green");
+		transaction.add(R.id.content,Slide1FinishFragment.newInstance(Color.RED), "first");
+		transaction.add(R.id.content,Slide1FinishFragment.newInstance(Color.BLUE), "first");
+		transaction.add(R.id.content,Slide1FinishFragment.newInstance(Color.GREEN), "green");
 		
 		transaction.commit();
 	}
+	
+	
 	@Override
-	public void onFragmentInteraction(Uri uri) {
-		// TODO Auto-generated method stub
+	public void onFragmentWantFinnish(Fragment fragment) {
+		FragmentTransaction transaction =fragmentManager.beginTransaction();
 		
+		transaction.remove(fragment);
+		
+		transaction.commit();
 	}
 
 }

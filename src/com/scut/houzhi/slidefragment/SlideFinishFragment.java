@@ -62,7 +62,6 @@ public abstract class SlideFinishFragment extends Fragment {
 	private FrameLayout.LayoutParams saveParams = null;
 	
 	/**
-	
 	 * 
 	 */
 	@Override
@@ -71,13 +70,14 @@ public abstract class SlideFinishFragment extends Fragment {
 		
 		//用一个framelayout 包装子类传过来的
 		final FrameLayout parent = new FrameLayout(container.getContext());
-		ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+		FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
 				ViewGroup.LayoutParams.MATCH_PARENT);
+		params.gravity = Gravity.TOP | Gravity.LEFT;
 		parent.setLayoutParams(params);
 		
-		
+		View view = onCreateContentView(inflater, container, savedInstanceState);
 		//添加子类 产生 的view
-		parent.addView(onCreateContentView(inflater, container, savedInstanceState));
+		parent.addView(view);
 		
 		parent.setOnTouchListener(new  View.OnTouchListener() {
 			float beginX = 0 ;
@@ -86,7 +86,6 @@ public abstract class SlideFinishFragment extends Fragment {
 			boolean isFirstMoveEvent = false;
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
-				Log.i("", "touch"+event.getAction());
 				float moveDis = 0 ;
 				 
 				switch(event.getAction()){
@@ -94,6 +93,7 @@ public abstract class SlideFinishFragment extends Fragment {
 					beginX = event.getRawX();
 					isFirstMoveEvent = true ;
 					isMoveFragment = true;
+					Log.i("", "touch ACTION_DOWN beginX---"+ beginX );
 					
 					saveParams = new FrameLayout.LayoutParams((ViewGroup.MarginLayoutParams) v.getLayoutParams());
 					return true;
@@ -103,21 +103,22 @@ public abstract class SlideFinishFragment extends Fragment {
 						break;
 					}
 					moveDis = event.getRawX() - beginX;
-					if(isFirstMoveEvent && moveDis ==0 ){
-						isMoveFragment = false;
-						break;
-					}else{
-						
-						isMoveFragment = true;
+					if(isFirstMoveEvent){
+						if( moveDis ==0 ){
+							isMoveFragment = false;
+							break;
+						}else{
+							isMoveFragment = true;
+						}
 					}
 					isFirstMoveEvent = false;
 					
 					FrameLayout.LayoutParams params =(FrameLayout.LayoutParams) v.getLayoutParams();
 					
-					params.leftMargin += moveDis;
-					params.rightMargin -= moveDis;
+					params.leftMargin = (int) moveDis;
+					params.rightMargin = (int) - moveDis;
 					params.gravity = Gravity.LEFT | Gravity.TOP;
-					
+					Log.i("", "touch ACTION_MOVE---"+ moveDis  +"--"+event.getRawX() );
 					v.setLayoutParams(params);
 					return true;
 				case MotionEvent.ACTION_UP:
@@ -127,20 +128,44 @@ public abstract class SlideFinishFragment extends Fragment {
 					moveDis = event.getRawX() - beginX;
 					float dis = - moveDis ;
 					boolean disappear = false;
-					float from = moveDis,to = 0;
+					float from = 0,to = -moveDis;
 					if(Math.abs(moveDis) > v.getWidth()/2){
 						//移动超出  消失此Fragment
 						to = v.getWidth()*(Math.abs(moveDis)/moveDis);
 						disappear = true;
 					}
-					long duration = 5000;
+					long duration = 500;
 					Log.i("", "touch dis---"+disappear+"=---="+(moveDis)+"---"+ v.getWidth());
 					startEndAnimation(v, duration, from,to, disappear);
 					return true;
 				}
-				 
+				
 				
 				return false;
+				
+//				float moveDis = 0 ;
+//				switch(event.getAction()){
+//				case MotionEvent.ACTION_DOWN:
+//					beginX = event.getX();
+//					break;
+//				case MotionEvent.ACTION_MOVE:
+//					moveDis = event.getX() - beginX;
+//					FrameLayout.LayoutParams params =(FrameLayout.LayoutParams) v.getLayoutParams();
+//					
+//					params.leftMargin += moveDis;
+//					params.rightMargin -= moveDis;
+//					params.gravity = Gravity.LEFT | Gravity.TOP;
+//					v.setLayoutParams(params);
+//					return true;
+//				case MotionEvent.ACTION_UP:
+//					moveDis = event.getX() - beginX;
+//					break;
+//				}
+//				
+//				
+//				
+//				return true;
+				
 			}
 		});
 		
@@ -160,9 +185,9 @@ public abstract class SlideFinishFragment extends Fragment {
 		TranslateAnimation translateAnimation =
 				new TranslateAnimation(from,to,  0, 0);
 		animationSet.addAnimation(translateAnimation);
-		
-//		animationSet.setFillAfter(true);
-//		animationSet.setFillEnabled(true);
+		animationSet.setDuration(duration);
+		animationSet.setFillAfter(true);
+		animationSet.setFillEnabled(true);
 		animationSet.setAnimationListener(new Animation.AnimationListener() {
 			
 			@Override
@@ -182,8 +207,10 @@ public abstract class SlideFinishFragment extends Fragment {
 				if(disappear){
 					mOnFragmentWantFinishListener.onFragmentWantFinnish(SlideFinishFragment.this);
 				}else{
-					//恢复
+					//恢复  一定要清除动画，否则动画效果仍然在，params 效果 跟Animation 效果同时作用着
+					view.clearAnimation();
 					view.setLayoutParams(saveParams);
+					
 				}
 			}
 		});

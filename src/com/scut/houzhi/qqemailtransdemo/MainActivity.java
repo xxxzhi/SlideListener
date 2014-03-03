@@ -7,10 +7,14 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
-import com.scut.houzhi.slidefragment.demo.Slide1FinishFragment;
-import com.scut.houzhi.slidefragment.SlideFinishFragment;
+import com.scut.houzhi.slidefragment.SlideRightFinishFragment;
+import com.scut.houzhi.slidefragment.demo.DemoSlideBottomFinishFragment;
+import com.scut.houzhi.slidefragment.demo.DemoSlideHFinishFragment;
+import com.scut.houzhi.slidefragment.demo.DemoSlideLeftFinishFragment;
+import com.scut.houzhi.slidefragment.demo.DemoSlideRightFinishFragment;
+import com.scut.houzhi.slidefragment.demo.DemoSlideTopFinishFragment;
 
-public class MainActivity extends FragmentActivity implements SlideFinishFragment.OnFragmentWantFinishListener{
+public class MainActivity extends FragmentActivity implements SlideRightFinishFragment.OnFragmentWantFinishListener{
 	FragmentManager fragmentManager = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +26,17 @@ public class MainActivity extends FragmentActivity implements SlideFinishFragmen
 		
 		
 		FragmentTransaction transaction =fragmentManager.beginTransaction();
-		
 
 		
-		transaction.add(R.id.content,Slide1FinishFragment.newInstance(Color.RED), "first");
-		transaction.add(R.id.content,Slide1FinishFragment.newInstance(Color.BLUE), "first");
-		transaction.add(R.id.content,Slide1FinishFragment.newInstance(Color.GREEN), "green");
+		transaction.add(R.id.content,DemoSlideHFinishFragment.newInstance(Color.RED), "first");
+		transaction.add(R.id.content,DemoSlideRightFinishFragment.newInstance(Color.BLUE), "first");
+		transaction.add(R.id.content,DemoSlideLeftFinishFragment.newInstance(Color.GREEN), "green");
+		
+		transaction.add(R.id.content,DemoSlideTopFinishFragment.newInstance(Color.YELLOW), "YELLOW");
+		transaction.add(R.id.content,DemoSlideBottomFinishFragment.newInstance(Color.MAGENTA), "MAGENTA");
+		
+		
+		
 		
 		transaction.commit();
 	}

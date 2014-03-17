@@ -1,11 +1,13 @@
 package com.scut.houzhi.qqemailtransdemo;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.View;
 
 import com.scut.houzhi.slidefragment.SlideRightFinishFragment;
 import com.scut.houzhi.slidefragment.demo.DemoSlideBottomFinishFragment;
@@ -39,6 +41,17 @@ public class MainActivity extends FragmentActivity implements SlideRightFinishFr
 		
 		
 		transaction.commit();
+		
+		
+		
+		findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(MainActivity.this, TestSlideActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
 	
 	

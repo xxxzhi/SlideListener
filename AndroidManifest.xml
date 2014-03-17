@@ -27,7 +27,7 @@
             android:name="com.scut.houzhi.qqemailtransdemo.TestSlideActivity"
             android:theme="@android:style/Theme.Translucent"
             android:label="@string/title_activity_main" >
-            ></activity>
+            </activity>
         
     </application>
 

@@ -1,4 +1,6 @@
-package com.scut.houzhi.qqemailtransdemo;
+package com.houzhi.qqemailtransdemo;
+
+import com.scut.houzhi.qqemailtransdemo.R;
 
 import android.app.Activity;
 import android.graphics.Color;

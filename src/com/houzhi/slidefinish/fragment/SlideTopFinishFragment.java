@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.scut.houzhi.slidefragment;
+package com.houzhi.slidefinish.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -23,12 +23,13 @@ import android.widget.FrameLayout;
  * @author houzhi
  *	可监听滑动删除 fragment
  *	使用该fragment 的Activity 必须实现OnFragmentWantFinishListener 接口
+ *
  *	
  */
-public abstract class SlideRightFinishFragment extends SlideHorizonalFinishFragment {
+public abstract class SlideTopFinishFragment extends SlideVerticalFinishFragment {
 
-	public SlideRightFinishFragment() {
-		super(false);
+	public SlideTopFinishFragment() {
+		super(true);
 	}
 	
 }

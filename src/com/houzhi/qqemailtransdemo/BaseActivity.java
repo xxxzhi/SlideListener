@@ -1,4 +1,4 @@
-package com.scut.houzhi.qqemailtransdemo;
+package com.houzhi.qqemailtransdemo;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.scut.houzhi.slidefragment;
+package com.houzhi.slidefinish.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -26,9 +26,9 @@ import android.widget.FrameLayout;
  *
  *	
  */
-public abstract class SlideTopFinishFragment extends SlideVerticalFinishFragment {
+public abstract class SlideLeftFinishFragment extends SlideHorizonalFinishFragment {
 
-	public SlideTopFinishFragment() {
+	public SlideLeftFinishFragment() {
 		super(true);
 	}
 	

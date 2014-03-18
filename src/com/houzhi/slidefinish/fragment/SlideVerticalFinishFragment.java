@@ -1,11 +1,9 @@
-package com.scut.houzhi.qqemailtransdemo;
+package com.houzhi.slidefinish.fragment;
 
-import com.scut.houzhi.slidefragment.SlideHorizonalFinishFragment;
-
-import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,31 +13,49 @@ import android.view.animation.AnimationSet;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 
-public class TestSlideActivity extends BaseActivity {
-	protected FrameLayout.LayoutParams saveParams = null;
+import com.houzhi.slidefinish.SlideFinish.SlideDirection;
+
+public abstract class SlideVerticalFinishFragment extends BaseSlideFinishFragment {
 	
 	
 	
+	//滑动方向
+	private SlideDirection direction = SlideDirection.VERTICAL;
+	
+	public SlideVerticalFinishFragment(boolean isTop){
+		if(isTop){
+			direction = SlideDirection.TOP;
+		}else{
+			direction = SlideDirection.BOTTOM;
+		}
+	}
+	
+	public SlideVerticalFinishFragment(){
+		
+	}
+	
+	
+	/**
+	 * 
+	 */
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	final public View onCreateView(LayoutInflater inflater,
+			ViewGroup container, Bundle savedInstanceState) {
 
 		// 用一个framelayout 包装子类传过来的
-		final FrameLayout parent = new FrameLayout(this);
+		final FrameLayout parent = new FrameLayout(container.getContext());
 		FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
 				ViewGroup.LayoutParams.MATCH_PARENT,
 				ViewGroup.LayoutParams.MATCH_PARENT);
 		params.gravity = Gravity.TOP | Gravity.LEFT;
 		parent.setLayoutParams(params);
 
-		View view = getLayoutInflater().inflate(R.layout.activity_test, null);
+		View view = onCreateContentView(inflater, container, savedInstanceState);
 		// 添加子类 产生 的view
 		parent.addView(view);
-		
-		setContentView(parent);
-		
+
 		parent.setOnTouchListener(new View.OnTouchListener() {
-			float beginX = 0;
+			float beginY = 0;
 
 			boolean isMoveFragment = false;
 			boolean isFirstMoveEvent = false;
@@ -50,10 +66,10 @@ public class TestSlideActivity extends BaseActivity {
 
 				switch (event.getAction()) {
 				case MotionEvent.ACTION_DOWN:
-					beginX = event.getRawX();
+					beginY = event.getRawY();
 					isFirstMoveEvent = true;
 					isMoveFragment = true;
-					Log.i("", "touch ACTION_DOWN beginX---" + beginX);
+					Log.i("", "touch ACTION_DOWN beginX---" + beginY);
 
 					saveParams = new FrameLayout.LayoutParams(
 							(ViewGroup.MarginLayoutParams) v.getLayoutParams());
@@ -63,43 +79,64 @@ public class TestSlideActivity extends BaseActivity {
 						// 非滑动fragment
 						break;
 					}
-					moveDis = event.getRawX() - beginX;
+					moveDis = event.getRawY() - beginY;
 					if (isFirstMoveEvent) {
 						isFirstMoveEvent = false;
-						if (moveDis <= 0)
-							isMoveFragment = false;
-						if (!isMoveFragment) {
-
+						switch (direction) {
+						case BOTTOM:
+							if (moveDis <= 0) isMoveFragment = false;
+							break;
+						case TOP:
+							if (moveDis >= 0) isMoveFragment = false;
+							break;
+						case VERTICAL:
+							if (moveDis == 0) isMoveFragment = false;
+							break;
+						default:
 							break;
 						}
-					} else {
-							if (moveDis <= 0)
-								moveDis = 0;
+						if(!isMoveFragment){
+							
+							break;
+						}
+					}else{
+						switch (direction) {
+						case BOTTOM:
+							if (moveDis <= 0) moveDis = 0 ;
+							break;
+						case TOP:
+							if (moveDis >= 0)  moveDis = 0;
+							break;
+						case VERTICAL:
+							break;
+						default:
+							break;
+						}
 					}
 
 					FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) v
 							.getLayoutParams();
 
-					params.leftMargin = (int) moveDis;
-					params.rightMargin = (int) -moveDis;
+					params.topMargin = (int) moveDis;
+					params.bottomMargin = (int) -moveDis;
 					params.gravity = Gravity.LEFT | Gravity.TOP;
 					Log.i("",
 							"touch ACTION_MOVE---" + moveDis + "--"
-									+ event.getRawX());
+									+ event.getRawY());
 					v.setLayoutParams(params);
 					return true;
 				case MotionEvent.ACTION_UP:
 					if (!isMoveFragment)
 						break;
 
-					moveDis = event.getRawX() - beginX;
+					moveDis = event.getRawY() - beginY;
 					float dis = -moveDis;
 					boolean disappear = false;
 					float from = 0,
 					to = -moveDis;
-					if (Math.abs(moveDis) > v.getWidth() / 2) {
+					if (Math.abs(moveDis) > v.getHeight() / 2) {
 						// 移动超出 消失此Fragment
-						to = v.getWidth() * (Math.abs(moveDis) / moveDis);
+						to = v.getHeight() * (Math.abs(moveDis) / moveDis);
 						disappear = true;
 					}
 					long duration = 500;
@@ -113,9 +150,8 @@ public class TestSlideActivity extends BaseActivity {
 			}
 		});
 
+		return parent;
 	}
-	
-	
 
 	// 移动动画
 	private void startEndAnimation(final View view, long duration, float from,
@@ -126,8 +162,8 @@ public class TestSlideActivity extends BaseActivity {
 			AlphaAnimation alphaAnimation = new AlphaAnimation(1, 0);
 			animationSet.addAnimation(alphaAnimation);
 		}
-		TranslateAnimation translateAnimation = new TranslateAnimation(from,
-				to, 0, 0);
+		TranslateAnimation translateAnimation = new TranslateAnimation(0,
+				0, from, to);
 		animationSet.addAnimation(translateAnimation);
 		animationSet.setDuration(duration);
 		animationSet.setFillAfter(true);
@@ -149,7 +185,8 @@ public class TestSlideActivity extends BaseActivity {
 			@Override
 			public void onAnimationEnd(Animation arg0) {
 				if (disappear) {
-					finish();
+					mOnFragmentWantFinishListener
+							.onSlideFragmentFinish(SlideVerticalFinishFragment.this);
 				} else {
 					// 恢复 一定要清除动画，否则动画效果仍然在，params 效果 跟Animation 效果同时作用着
 					view.clearAnimation();
@@ -162,6 +199,5 @@ public class TestSlideActivity extends BaseActivity {
 		view.startAnimation(animationSet);
 
 	}
-	
 
 }

@@ -1,4 +1,4 @@
-package com.scut.houzhi.slidefragment;
+package com.houzhi.slidefinish.fragment;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -13,23 +13,23 @@ import android.view.animation.AnimationSet;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 
-public abstract class SlideVerticalFinishFragment extends BaseSlideFinishFragment {
+import com.houzhi.slidefinish.SlideFinish.SlideDirection;
+
+public abstract class SlideHorizonalFinishFragment extends BaseSlideFinishFragment {
 	
-	
-	protected static enum SlideDirection{ TOP,BOTTOM,VERTICAL};
 	
 	//滑动方向
-	private SlideDirection direction = SlideDirection.VERTICAL;
+	private SlideDirection direction = SlideDirection.HORIZONAL;
 	
-	public SlideVerticalFinishFragment(boolean isTop){
-		if(isTop){
-			direction = SlideDirection.TOP;
+	public SlideHorizonalFinishFragment(boolean isLeft){
+		if(isLeft){
+			direction = SlideDirection.LEFT;
 		}else{
-			direction = SlideDirection.BOTTOM;
+			direction = SlideDirection.RIGHT;
 		}
 	}
 	
-	public SlideVerticalFinishFragment(){
+	public SlideHorizonalFinishFragment(){
 		
 	}
 	
@@ -54,7 +54,7 @@ public abstract class SlideVerticalFinishFragment extends BaseSlideFinishFragmen
 		parent.addView(view);
 
 		parent.setOnTouchListener(new View.OnTouchListener() {
-			float beginY = 0;
+			float beginX = 0;
 
 			boolean isMoveFragment = false;
 			boolean isFirstMoveEvent = false;
@@ -65,10 +65,10 @@ public abstract class SlideVerticalFinishFragment extends BaseSlideFinishFragmen
 
 				switch (event.getAction()) {
 				case MotionEvent.ACTION_DOWN:
-					beginY = event.getRawY();
+					beginX = event.getRawX();
 					isFirstMoveEvent = true;
 					isMoveFragment = true;
-					Log.i("", "touch ACTION_DOWN beginX---" + beginY);
+					Log.i("", "touch ACTION_DOWN beginX---" + beginX);
 
 					saveParams = new FrameLayout.LayoutParams(
 							(ViewGroup.MarginLayoutParams) v.getLayoutParams());
@@ -78,17 +78,17 @@ public abstract class SlideVerticalFinishFragment extends BaseSlideFinishFragmen
 						// 非滑动fragment
 						break;
 					}
-					moveDis = event.getRawY() - beginY;
+					moveDis = event.getRawX() - beginX;
 					if (isFirstMoveEvent) {
 						isFirstMoveEvent = false;
 						switch (direction) {
-						case BOTTOM:
+						case LEFT:
 							if (moveDis <= 0) isMoveFragment = false;
 							break;
-						case TOP:
+						case RIGHT:
 							if (moveDis >= 0) isMoveFragment = false;
 							break;
-						case VERTICAL:
+						case HORIZONAL:
 							if (moveDis == 0) isMoveFragment = false;
 							break;
 						default:
@@ -100,42 +100,44 @@ public abstract class SlideVerticalFinishFragment extends BaseSlideFinishFragmen
 						}
 					}else{
 						switch (direction) {
-						case BOTTOM:
+						case LEFT:
 							if (moveDis <= 0) moveDis = 0 ;
 							break;
-						case TOP:
+						case RIGHT:
 							if (moveDis >= 0)  moveDis = 0;
 							break;
-						case VERTICAL:
+						case HORIZONAL:
 							break;
 						default:
 							break;
 						}
 					}
-
+					
+					
+					
 					FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) v
 							.getLayoutParams();
-
-					params.topMargin = (int) moveDis;
-					params.bottomMargin = (int) -moveDis;
+					
+					params.leftMargin = (int) moveDis;
+					params.rightMargin = (int) -moveDis;
 					params.gravity = Gravity.LEFT | Gravity.TOP;
 					Log.i("",
 							"touch ACTION_MOVE---" + moveDis + "--"
-									+ event.getRawY());
+									+ event.getRawX());
 					v.setLayoutParams(params);
 					return true;
 				case MotionEvent.ACTION_UP:
 					if (!isMoveFragment)
 						break;
 
-					moveDis = event.getRawY() - beginY;
+					moveDis = event.getRawX() - beginX;
 					float dis = -moveDis;
 					boolean disappear = false;
 					float from = 0,
 					to = -moveDis;
-					if (Math.abs(moveDis) > v.getHeight() / 2) {
+					if (Math.abs(moveDis) > v.getWidth() / 2) {
 						// 移动超出 消失此Fragment
-						to = v.getHeight() * (Math.abs(moveDis) / moveDis);
+						to = v.getWidth() * (Math.abs(moveDis) / moveDis);
 						disappear = true;
 					}
 					long duration = 500;
@@ -161,8 +163,8 @@ public abstract class SlideVerticalFinishFragment extends BaseSlideFinishFragmen
 			AlphaAnimation alphaAnimation = new AlphaAnimation(1, 0);
 			animationSet.addAnimation(alphaAnimation);
 		}
-		TranslateAnimation translateAnimation = new TranslateAnimation(0,
-				0, from, to);
+		TranslateAnimation translateAnimation = new TranslateAnimation(from,
+				to, 0, 0);
 		animationSet.addAnimation(translateAnimation);
 		animationSet.setDuration(duration);
 		animationSet.setFillAfter(true);
@@ -185,7 +187,7 @@ public abstract class SlideVerticalFinishFragment extends BaseSlideFinishFragmen
 			public void onAnimationEnd(Animation arg0) {
 				if (disappear) {
 					mOnFragmentWantFinishListener
-							.onFragmentWantFinnish(SlideVerticalFinishFragment.this);
+							.onSlideFragmentFinish(SlideHorizonalFinishFragment.this);
 				} else {
 					// 恢复 一定要清除动画，否则动画效果仍然在，params 效果 跟Animation 效果同时作用着
 					view.clearAnimation();

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.scut.houzhi.slidefragment;
+package com.houzhi.slidefinish.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;

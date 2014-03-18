@@ -1,4 +1,4 @@
-package com.scut.houzhi.slidefragment.demo;
+package com.houzhi.slidefinish.fragment.demo;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -6,12 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.scut.houzhi.qqemailtransdemo.BlankFragment;
+import com.houzhi.qqemailtransdemo.BlankFragment;
+import com.houzhi.slidefinish.fragment.SlideHorizonalFinishFragment;
+import com.houzhi.slidefinish.fragment.SlideRightFinishFragment;
+import com.houzhi.slidefinish.fragment.SlideTopFinishFragment;
 import com.scut.houzhi.qqemailtransdemo.R;
-import com.scut.houzhi.slidefragment.SlideHorizonalFinishFragment;
-import com.scut.houzhi.slidefragment.SlideRightFinishFragment;
 
-public class DemoSlideHFinishFragment extends SlideHorizonalFinishFragment {
+public class DemoSlideTopFinishFragment extends SlideTopFinishFragment {
 	
 	private static final String ARG_PARAM1 = "param1";
 	
@@ -26,15 +27,15 @@ public class DemoSlideHFinishFragment extends SlideHorizonalFinishFragment {
 		return v;
 	}
 
-	public static DemoSlideHFinishFragment newInstance(int bgColor) {
-		DemoSlideHFinishFragment fragment = new DemoSlideHFinishFragment();
+	public static DemoSlideTopFinishFragment newInstance(int bgColor) {
+		DemoSlideTopFinishFragment fragment = new DemoSlideTopFinishFragment();
 		Bundle args = new Bundle();
 		args.putInt(ARG_PARAM1, bgColor);
 		fragment.setArguments(args);
 		return fragment;
 	}
 
-	public DemoSlideHFinishFragment() {
+	public DemoSlideTopFinishFragment() {
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package com.scut.houzhi.qqemailtransdemo;
+package com.houzhi.qqemailtransdemo;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,14 +9,15 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 
-import com.scut.houzhi.slidefragment.SlideRightFinishFragment;
-import com.scut.houzhi.slidefragment.demo.DemoSlideBottomFinishFragment;
-import com.scut.houzhi.slidefragment.demo.DemoSlideHFinishFragment;
-import com.scut.houzhi.slidefragment.demo.DemoSlideLeftFinishFragment;
-import com.scut.houzhi.slidefragment.demo.DemoSlideRightFinishFragment;
-import com.scut.houzhi.slidefragment.demo.DemoSlideTopFinishFragment;
+import com.houzhi.slidefinish.fragment.SlideRightFinishFragment;
+import com.houzhi.slidefinish.fragment.demo.DemoSlideBottomFinishFragment;
+import com.houzhi.slidefinish.fragment.demo.DemoSlideHFinishFragment;
+import com.houzhi.slidefinish.fragment.demo.DemoSlideLeftFinishFragment;
+import com.houzhi.slidefinish.fragment.demo.DemoSlideRightFinishFragment;
+import com.houzhi.slidefinish.fragment.demo.DemoSlideTopFinishFragment;
+import com.scut.houzhi.qqemailtransdemo.R;
 
-public class MainActivity extends FragmentActivity implements SlideRightFinishFragment.OnFragmentWantFinishListener{
+public class MainActivity extends FragmentActivity implements SlideRightFinishFragment.SlideFragmentFinishListener{
 	FragmentManager fragmentManager = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +54,10 @@ public class MainActivity extends FragmentActivity implements SlideRightFinishFr
 			}
 		});
 	}
-	
-	
+
+
 	@Override
-	public void onFragmentWantFinnish(Fragment fragment) {
+	public void onSlideFragmentFinish(Fragment fragment) {
 		FragmentTransaction transaction =fragmentManager.beginTransaction();
 		
 		transaction.remove(fragment);

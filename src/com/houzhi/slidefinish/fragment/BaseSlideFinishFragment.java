@@ -1,38 +1,37 @@
 /**
  * 
  */
-package com.scut.houzhi.slidefragment;
+package com.houzhi.slidefinish.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 
 /**
  * @author houzhi
  *	可监听滑动删除 fragment
- *	使用该fragment 的Activity 必须实现OnFragmentWantFinishListener 接口
+ *	使用该fragment 的Activity 必须实现SlideFragmentFinishListener 接口
  *
  *	
  */
 public abstract class BaseSlideFinishFragment extends Fragment {
-	public static interface OnFragmentWantFinishListener {
-			public void onFragmentWantFinnish(Fragment fragment);
-		}
-	 
+	
+	/**
+	 * 
+	 * @author houzhi
+	 * 
+	 */
+	public static interface SlideFragmentFinishListener{
+		public void onSlideFragmentFinish(Fragment fragment);
+	}
+	
 	//监听 fragment 接口
-	protected OnFragmentWantFinishListener mOnFragmentWantFinishListener;
+	protected SlideFragmentFinishListener mOnFragmentWantFinishListener;
 	
 	protected Activity activity ;
 	
@@ -43,8 +42,8 @@ public abstract class BaseSlideFinishFragment extends Fragment {
 	
 	@Override
 	public void onAttach(Activity activity) {
-		if(activity instanceof OnFragmentWantFinishListener){
-			mOnFragmentWantFinishListener = (OnFragmentWantFinishListener)activity;
+		if(activity instanceof SlideFragmentFinishListener){
+			mOnFragmentWantFinishListener = (SlideFragmentFinishListener)activity;
 		}else{
 			throw new RuntimeException("the Activity which use SlideFinishFragment" +
 					" must implements OnFragmentWantFinishLIstener!");

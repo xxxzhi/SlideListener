@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.houzhi.qqemailtransdemo.BlankFragment;
+import com.houzhi.demo.BlankFragment;
 import com.houzhi.slidefinish.fragment.SlideBottomFinishFragment;
 import com.houzhi.slidefinish.fragment.SlideHorizonalFinishFragment;
 import com.houzhi.slidefinish.fragment.SlideRightFinishFragment;

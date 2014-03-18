@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.houzhi.qqemailtransdemo.BlankFragment;
+import com.houzhi.demo.BlankFragment;
 import com.houzhi.slidefinish.fragment.SlideHorizonalFinishFragment;
 import com.houzhi.slidefinish.fragment.SlideRightFinishFragment;
 import com.scut.houzhi.qqemailtransdemo.R;

@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.houzhi.qqemailtransdemo.MainActivity"
+            android:name="com.houzhi.demo.MainActivity"
             android:label="@string/title_activity_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
         </activity>
         
         <activity 
-            android:name="com.houzhi.qqemailtransdemo.TestSlideActivity"
+            android:name="com.houzhi.demo.TestSlideActivity"
             android:theme="@android:style/Theme.Translucent"
             android:label="@string/title_activity_main" >
             </activity>

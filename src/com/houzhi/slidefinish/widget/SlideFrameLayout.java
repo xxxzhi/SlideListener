@@ -59,111 +59,108 @@ public class SlideFrameLayout extends FrameLayout {
 		this.mSlideListener = mSlideListener;
 	}
 
-
-	private void init(){
+	private void init() {
 		FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
 				ViewGroup.LayoutParams.MATCH_PARENT,
 				ViewGroup.LayoutParams.MATCH_PARENT);
 		params.gravity = Gravity.TOP | Gravity.LEFT;
 		setLayoutParams(params);
 	}
-	
-	private boolean slideHorizonalFinish(View v,
-			MotionEvent event) {
 
-				float moveDis = 0;
+	private boolean slideHorizonalFinish(View v, MotionEvent event) {
 
-				switch (event.getAction()) {
-				case MotionEvent.ACTION_DOWN:
-					beginX = event.getRawX();
-					isFirstMoveEvent = true;
-					isMoveFragment = true;
-					Log.i("", "touch ACTION_DOWN beginX---" + beginX);
+		float moveDis = 0;
 
-					saveParams = new FrameLayout.LayoutParams(
-							(ViewGroup.MarginLayoutParams) v.getLayoutParams());
-					return true;
-				case MotionEvent.ACTION_MOVE:
-					if (!isMoveFragment) {
-						// 非滑动fragment
-						break;
-					}
-					moveDis = event.getRawX() - beginX;
-					if (isFirstMoveEvent) {
-						isFirstMoveEvent = false;
-						switch (direction) {
-						case LEFT:
-							if (moveDis <= 0)
-								isMoveFragment = false;
-							break;
-						case RIGHT:
-							if (moveDis >= 0)
-								isMoveFragment = false;
-							break;
-						case HORIZONAL:
-							if (moveDis == 0)
-								isMoveFragment = false;
-							break;
-						default:
-							break;
-						}
-						if (!isMoveFragment) {
+		switch (event.getAction()) {
+		case MotionEvent.ACTION_DOWN:
+			beginX = event.getRawX();
+			isFirstMoveEvent = true;
+			isMoveFragment = true;
+			Log.i("", "touch ACTION_DOWN beginX---" + beginX);
 
-							break;
-						}
-					} else {
-						switch (direction) {
-						case LEFT:
-							if (moveDis <= 0)
-								moveDis = 0;
-							break;
-						case RIGHT:
-							if (moveDis >= 0)
-								moveDis = 0;
-							break;
-						case HORIZONAL:
-							break;
-						default:
-							break;
-						}
-					}
-
-					FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) v
-							.getLayoutParams();
-
-					params.leftMargin = (int) moveDis;
-					params.rightMargin = (int) -moveDis;
-					params.gravity = Gravity.LEFT | Gravity.TOP;
-					Log.i("",
-							"touch ACTION_MOVE---" + moveDis + "--"
-									+ event.getRawX());
-					v.setLayoutParams(params);
-					return true;
-				case MotionEvent.ACTION_UP:
-					if (!isMoveFragment)
-						break;
-
-					moveDis = event.getRawX() - beginX;
-					float dis = -moveDis;
-					boolean disappear = false;
-					float from = 0,
-					to = -moveDis;
-					if (Math.abs(moveDis) > v.getWidth() / 2) {
-						// 移动超出 消失此Fragment
-						to = v.getWidth() * (Math.abs(moveDis) / moveDis);
-						disappear = true;
-					}
-					long duration = 500;
-					Log.i("", "touch dis---" + disappear + "=---=" + (moveDis)
-							+ "---" + v.getWidth());
-					startEndHorizonalAnimation(v, duration, from, to, disappear);
-					return true;
+			saveParams = new FrameLayout.LayoutParams(
+					(ViewGroup.MarginLayoutParams) v.getLayoutParams());
+			return true;
+		case MotionEvent.ACTION_MOVE:
+			if (!isMoveFragment) {
+				// 非滑动fragment
+				break;
+			}
+			moveDis = event.getRawX() - beginX;
+			if (isFirstMoveEvent) {
+				isFirstMoveEvent = false;
+				switch (direction) {
+				case LEFT:
+					if (moveDis <= 0)
+						isMoveFragment = false;
+					break;
+				case RIGHT:
+					if (moveDis >= 0)
+						isMoveFragment = false;
+					break;
+				case HORIZONAL:
+					if (moveDis == 0)
+						isMoveFragment = false;
+					break;
+				default:
+					break;
 				}
-				return false;
+				if (!isMoveFragment) {
+
+					break;
+				}
+			} else {
+				switch (direction) {
+				case LEFT:
+					if (moveDis <= 0)
+						moveDis = 0;
+					break;
+				case RIGHT:
+					if (moveDis >= 0)
+						moveDis = 0;
+					break;
+				case HORIZONAL:
+					break;
+				default:
+					break;
+				}
+			}
+
+			FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) v
+					.getLayoutParams();
+
+			params.leftMargin = (int) moveDis;
+			params.rightMargin = (int) -moveDis;
+			params.gravity = Gravity.LEFT | Gravity.TOP;
+			Log.i("", "touch ACTION_MOVE---" + moveDis + "--" + event.getRawX());
+			v.setLayoutParams(params);
+			return true;
+		case MotionEvent.ACTION_UP:
+			if (!isMoveFragment)
+				break;
+
+			moveDis = event.getRawX() - beginX;
+			float dis = -moveDis;
+			boolean disappear = false;
+			float from = 0,
+			to = -moveDis;
+			if (Math.abs(moveDis) > v.getWidth() / 2) {
+				// 移动超出 消失此Fragment
+				to = v.getWidth() * (Math.abs(moveDis) / moveDis);
+				disappear = true;
+			}
+			long duration = 500;
+			Log.i("", "touch dis---" + disappear + "=---=" + (moveDis) + "---"
+					+ v.getWidth());
+			startEndHorizonalAnimation(v, duration, from, to, disappear);
+			return true;
+		}
+		return false;
 
 	}
-	private SlideDirection direction =SlideDirection.LEFT;
-	
+
+	private SlideDirection direction = SlideDirection.LEFT;
+
 	public SlideDirection getDirection() {
 		return direction;
 	}
@@ -172,99 +169,96 @@ public class SlideFrameLayout extends FrameLayout {
 		this.direction = direction;
 	}
 
-	private boolean slideVerticalFinish(View v,
-			MotionEvent event) {
+	private boolean slideVerticalFinish(View v, MotionEvent event) {
 
-				float moveDis = 0;
+		float moveDis = 0;
 
-				switch (event.getAction()) {
-				case MotionEvent.ACTION_DOWN:
-					beginY = event.getRawY();
-					isFirstMoveEvent = true;
-					isMoveFragment = true;
-					Log.i("", "touch ACTION_DOWN beginX---" + beginY);
+		switch (event.getAction()) {
+		case MotionEvent.ACTION_DOWN:
+			beginY = event.getRawY();
+			isFirstMoveEvent = true;
+			isMoveFragment = true;
+			Log.i("", "touch ACTION_DOWN beginX---" + beginY);
 
-					saveParams = new FrameLayout.LayoutParams(
-							(ViewGroup.MarginLayoutParams) v.getLayoutParams());
-					return true;
-				case MotionEvent.ACTION_MOVE:
-					if (!isMoveFragment) {
-						// 非滑动fragment
-						break;
-					}
-					moveDis = event.getRawY() - beginY;
-					if (isFirstMoveEvent) {
-						isFirstMoveEvent = false;
-						switch (direction) {
-						case BOTTOM:
-							if (moveDis <= 0)
-								isMoveFragment = false;
-							break;
-						case TOP:
-							if (moveDis >= 0)
-								isMoveFragment = false;
-							break;
-						case VERTICAL:
-							if (moveDis == 0)
-								isMoveFragment = false;
-							break;
-						default:
-							break;
-						}
-						if (!isMoveFragment) {
-
-							break;
-						}
-					} else {
-						switch (direction) {
-						case BOTTOM:
-							if (moveDis <= 0)
-								moveDis = 0;
-							break;
-						case TOP:
-							if (moveDis >= 0)
-								moveDis = 0;
-							break;
-						case VERTICAL:
-							break;
-						default:
-							break;
-						}
-					}
-
-					FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) v
-							.getLayoutParams();
-
-					params.topMargin = (int) moveDis;
-					params.bottomMargin = (int) -moveDis;
-					params.gravity = Gravity.LEFT | Gravity.TOP;
-					Log.i("",
-							"touch ACTION_MOVE---" + moveDis + "--"
-									+ event.getRawY());
-					v.setLayoutParams(params);
-					return true;
-				case MotionEvent.ACTION_UP:
-					if (!isMoveFragment)
-						break;
-
-					moveDis = event.getRawY() - beginY;
-					float dis = -moveDis;
-					boolean disappear = false;
-					float from = 0,
-					to = -moveDis;
-					if (Math.abs(moveDis) > v.getHeight() / 2) {
-						// 移动超出 消失此Fragment
-						to = v.getHeight() * (Math.abs(moveDis) / moveDis);
-						disappear = true;
-					}
-					long duration = 500;
-					Log.i("", "touch dis---" + disappear + "=---=" + (moveDis)
-							+ "---" + v.getWidth());
-					startEndVerticalAnimation(v, duration, from, to, disappear);
-					return true;
+			saveParams = new FrameLayout.LayoutParams(
+					(ViewGroup.MarginLayoutParams) v.getLayoutParams());
+			return true;
+		case MotionEvent.ACTION_MOVE:
+			if (!isMoveFragment) {
+				// 非滑动fragment
+				break;
+			}
+			moveDis = event.getRawY() - beginY;
+			if (isFirstMoveEvent) {
+				isFirstMoveEvent = false;
+				switch (direction) {
+				case BOTTOM:
+					if (moveDis <= 0)
+						isMoveFragment = false;
+					break;
+				case TOP:
+					if (moveDis >= 0)
+						isMoveFragment = false;
+					break;
+				case VERTICAL:
+					if (moveDis == 0)
+						isMoveFragment = false;
+					break;
+				default:
+					break;
 				}
+				if (!isMoveFragment) {
 
-				return false;
+					break;
+				}
+			} else {
+				switch (direction) {
+				case BOTTOM:
+					if (moveDis <= 0)
+						moveDis = 0;
+					break;
+				case TOP:
+					if (moveDis >= 0)
+						moveDis = 0;
+					break;
+				case VERTICAL:
+					break;
+				default:
+					break;
+				}
+			}
+
+			FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) v
+					.getLayoutParams();
+
+			params.topMargin = (int) moveDis;
+			params.bottomMargin = (int) -moveDis;
+			params.gravity = Gravity.LEFT | Gravity.TOP;
+			Log.i("", "touch ACTION_MOVE---" + moveDis + "--" + event.getRawY());
+			v.setLayoutParams(params);
+			return true;
+		case MotionEvent.ACTION_UP:
+			if (!isMoveFragment)
+				break;
+
+			moveDis = event.getRawY() - beginY;
+			float dis = -moveDis;
+			boolean disappear = false;
+			float from = 0,
+			to = -moveDis;
+			if (Math.abs(moveDis) > v.getHeight() / 2) {
+				// 移动超出 消失此Fragment
+				to = v.getHeight() * (Math.abs(moveDis) / moveDis);
+				disappear = true;
+			}
+			long duration = 500;
+			Log.i("", "touch dis---" + disappear + "=---=" + (moveDis) + "---"
+					+ v.getWidth());
+			startEndVerticalAnimation(v, duration, from, to, disappear);
+			return true;
+		}
+
+		return false;
 
 	}
 
@@ -347,13 +341,11 @@ public class SlideFrameLayout extends FrameLayout {
 
 			@Override
 			public void onAnimationRepeat(Animation arg0) {
-				// TODO Auto-generated method stub
 
 			}
 
 			@Override
 			public void onAnimationStart(Animation arg0) {
-				// TODO Auto-generated method stub
 
 			}
 		});
@@ -364,34 +356,30 @@ public class SlideFrameLayout extends FrameLayout {
 
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent ev) {
-		
+
 		return super.dispatchTouchEvent(ev);
 	}
 
-	float beginX = 0,beginY = 0 ;
+	float beginX = 0, beginY = 0;
 
 	boolean isMoveFragment = false;
 	boolean isFirstMoveEvent = false;
-	
-	
-	private boolean judgeVertical(View v ,MotionEvent event){
+
+	private boolean judgeVertical(View v, MotionEvent event) {
 		float moveDis = 0;
 
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_DOWN:
 			beginY = event.getRawY();
 			isFirstMoveEvent = true;
-			isMoveFragment = true;
+			isMoveFragment = false;
 			Log.i("", "touch ACTION_DOWN beginX---" + beginY);
 
 			saveParams = new FrameLayout.LayoutParams(
 					(ViewGroup.MarginLayoutParams) v.getLayoutParams());
 			return false;
 		case MotionEvent.ACTION_MOVE:
-			if (!isMoveFragment) {
-				// 非滑动fragment
-				break;
-			}
+			
 			moveDis = event.getRawY() - beginY;
 			if (isFirstMoveEvent) {
 				isFirstMoveEvent = false;
@@ -411,26 +399,13 @@ public class SlideFrameLayout extends FrameLayout {
 				default:
 					break;
 				}
-				if (!isMoveFragment) {
-
-					break;
-				}
-			} else {
-				switch (direction) {
-				case BOTTOM:
-					if (moveDis <= 0)
-						moveDis = 0;
-					break;
-				case TOP:
-					if (moveDis >= 0)
-						moveDis = 0;
-					break;
-				case VERTICAL:
-					break;
-				default:
-					break;
-				}
 			}
+			
+			if (!isMoveFragment) {
+				//
+				break;
+			}
+			
 			return true;
 		case MotionEvent.ACTION_UP:
 			if (!isMoveFragment)
@@ -441,29 +416,26 @@ public class SlideFrameLayout extends FrameLayout {
 
 		return false;
 	}
-	
-	
-	private boolean judgeHorizonal(View v ,MotionEvent event){
+
+	private boolean judgeHorizonal(View v, MotionEvent event) {
 		float moveDis = 0;
 
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_DOWN:
 			beginX = event.getRawX();
 			isFirstMoveEvent = true;
-			isMoveFragment = true;
+			isMoveFragment = false;
 			Log.i("", "touch ACTION_DOWN beginX---" + beginX);
 
 			saveParams = new FrameLayout.LayoutParams(
 					(ViewGroup.MarginLayoutParams) v.getLayoutParams());
 			return false;
 		case MotionEvent.ACTION_MOVE:
-			if (!isMoveFragment) {
-				// 非滑动fragment
-				break;
-			}
+			
 			moveDis = event.getRawX() - beginX;
 			if (isFirstMoveEvent) {
 				isFirstMoveEvent = false;
+				isMoveFragment = true ;
 				switch (direction) {
 				case LEFT:
 					if (moveDis <= 0)
@@ -480,26 +452,14 @@ public class SlideFrameLayout extends FrameLayout {
 				default:
 					break;
 				}
-				if (!isMoveFragment) {
-
-					break;
-				}
-			} else {
-				switch (direction) {
-				case LEFT:
-					if (moveDis <= 0)
-						moveDis = 0;
-					break;
-				case RIGHT:
-					if (moveDis >= 0)
-						moveDis = 0;
-					break;
-				case HORIZONAL:
-					break;
-				default:
-					break;
-				}
+				
 			}
+			
+			if (!isMoveFragment) {
+
+				break;
+			}
+			
 			return true;
 		case MotionEvent.ACTION_UP:
 			if (!isMoveFragment)
@@ -509,29 +469,27 @@ public class SlideFrameLayout extends FrameLayout {
 
 		return false;
 	}
-	
+
 	@Override
-	public boolean onTouchEvent(MotionEvent event){
+	public boolean onTouchEvent(MotionEvent event) {
 		boolean res = false;
 		switch (direction) {
 		case LEFT:
 		case RIGHT:
 		case HORIZONAL:
-			res = slideHorizonalFinish(this,event);
+			res = slideHorizonalFinish(this, event);
 			break;
 		case TOP:
 		case BOTTOM:
 		case VERTICAL:
-			res = slideVerticalFinish(this,event);
+			res = slideVerticalFinish(this, event);
 			break;
 		}
-		return res ;
+		return res;
 	}
-	
+
 	private static final String TAG = "SLIDEFRAMELAYOUT";
-	
-	
-	
+
 	@Override
 	public boolean onInterceptTouchEvent(MotionEvent ev) {
 		boolean judgeRes = false;
@@ -539,16 +497,15 @@ public class SlideFrameLayout extends FrameLayout {
 		case LEFT:
 		case RIGHT:
 		case HORIZONAL:
-			judgeRes = judgeHorizonal(this,ev);
+			judgeRes = judgeHorizonal(this, ev);
 			break;
 		case TOP:
 		case BOTTOM:
 		case VERTICAL:
 			judgeRes = judgeVertical(this, ev);
 		}
-		Log.d(TAG, "onInterceptTouchEvent --- > "+ judgeRes);
+		Log.d(TAG, "onInterceptTouchEvent --- > " + judgeRes);
 		return judgeRes;
 	}
-
 
 }

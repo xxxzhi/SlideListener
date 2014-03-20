@@ -2,29 +2,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff0000"
+    android:background="#00ff00"
     tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-         >
+        android:layout_below="@id/button1" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" >
-            
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="Hello move me left to finish
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:text="Hello move me left to finish
         
         
         
@@ -43,8 +48,7 @@
 　　琼斯本场手感火热，9分57秒一幕就是证明。戈登-海沃德丢球，琼斯衔枚疾走，理查德-杰弗森无奈在三分线附近对其犯规，不料裁判哨响后，琼斯单手拿回球信手一抛，球竟应声入网。末节8分04秒琼斯持球外线单打，面对防守球员，先是用脚步动作迷惑对手，随后突然一记漂亮的转身，将对手甩在身后，单臂劈扣得手。
 
 　　对手实力有限，给了琼斯发挥的空间，凭此一战，他成为火箭队史上30分5篮板4盖帽这组统计最年轻的球员，超过了大梦22岁310天的纪录。另外这组数据火箭史上只有奥拉朱旺、姚明和拉夫-桑普森(仅1次)做到过。正如魔兽赛前所说，火箭想在季后赛开始的时候找到最好的状态。而在为季后赛备战阶段，能打出一场这样的比赛，不管是对琼斯还是火箭，都是一大福音。(魑魅)"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-            
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
     </ScrollView>
 

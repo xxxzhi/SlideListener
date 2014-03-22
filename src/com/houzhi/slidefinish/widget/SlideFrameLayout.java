@@ -23,7 +23,7 @@ public class SlideFrameLayout extends FrameLayout {
 	public SlideFrameLayout(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		init();
-	}
+	} 
 
 	public SlideFrameLayout(Context context) {
 		super(context);

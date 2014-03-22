@@ -14,7 +14,12 @@ import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 
 public class SlideFrameLayout extends FrameLayout {
-
+	/**
+	 * move thershold ，if the distance of moving more than thershold ,this framelayout will be slide.
+	 */
+	private static final int MOVE_THRESHOLD = 5;
+	
+	
 	public SlideFrameLayout(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		init();
@@ -31,7 +36,7 @@ public class SlideFrameLayout extends FrameLayout {
 	}
 
 	public static enum SlideDirection {
-		LEFT, RIGHT, HORIZONAL, TOP, BOTTOM, VERTICAL
+		LEFT, RIGHT, HORIZONAL, TOP, BOTTOM, VERTICAL,NO
 	};
 
 	/**
@@ -73,58 +78,30 @@ public class SlideFrameLayout extends FrameLayout {
 
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_DOWN:
-			beginX = event.getRawX();
-			isFirstMoveEvent = true;
-			isMoveFragment = true;
-			Log.i("", "touch ACTION_DOWN beginX---" + beginX);
-
-			saveParams = new FrameLayout.LayoutParams(
-					(ViewGroup.MarginLayoutParams) v.getLayoutParams());
-			return true;
+			
+			break;
 		case MotionEvent.ACTION_MOVE:
 			if (!isMoveFragment) {
-				// 非滑动fragment
+				// doesn't move
 				break;
 			}
 			moveDis = event.getRawX() - beginX;
-			if (isFirstMoveEvent) {
-				isFirstMoveEvent = false;
-				switch (direction) {
-				case LEFT:
-					if (moveDis <= 0)
-						isMoveFragment = false;
-					break;
-				case RIGHT:
-					if (moveDis >= 0)
-						isMoveFragment = false;
-					break;
-				case HORIZONAL:
-					if (moveDis == 0)
-						isMoveFragment = false;
-					break;
-				default:
-					break;
-				}
-				if (!isMoveFragment) {
-
-					break;
-				}
-			} else {
-				switch (direction) {
-				case LEFT:
-					if (moveDis <= 0)
-						moveDis = 0;
-					break;
-				case RIGHT:
-					if (moveDis >= 0)
-						moveDis = 0;
-					break;
-				case HORIZONAL:
-					break;
-				default:
-					break;
-				}
+			
+			switch (direction) {
+			case RIGHT:
+				if (moveDis <= 0)
+					moveDis = 0;
+				break;
+			case LEFT:
+				if (moveDis >= 0)
+					moveDis = 0;
+				break;
+			case HORIZONAL:
+				break;
+			default:
+				break;
 			}
+		
 
 			FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) v
 					.getLayoutParams();
@@ -140,7 +117,21 @@ public class SlideFrameLayout extends FrameLayout {
 				break;
 
 			moveDis = event.getRawX() - beginX;
-			float dis = -moveDis;
+			switch (direction) {
+			case RIGHT:
+				if (moveDis <= 0)
+					moveDis = 0;
+				break;
+			case LEFT:
+				if (moveDis >= 0)
+					moveDis = 0;
+				break;
+			case HORIZONAL:
+				break;
+			default:
+				break;
+			}
+			
 			boolean disappear = false;
 			float from = 0,
 			to = -moveDis;
@@ -159,7 +150,7 @@ public class SlideFrameLayout extends FrameLayout {
 
 	}
 
-	private SlideDirection direction = SlideDirection.LEFT;
+	private SlideDirection direction = SlideDirection.RIGHT;
 
 	public SlideDirection getDirection() {
 		return direction;
@@ -175,57 +166,28 @@ public class SlideFrameLayout extends FrameLayout {
 
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_DOWN:
-			beginY = event.getRawY();
-			isFirstMoveEvent = true;
-			isMoveFragment = true;
-			Log.i("", "touch ACTION_DOWN beginX---" + beginY);
-
-			saveParams = new FrameLayout.LayoutParams(
-					(ViewGroup.MarginLayoutParams) v.getLayoutParams());
-			return true;
+			break;
 		case MotionEvent.ACTION_MOVE:
 			if (!isMoveFragment) {
-				// 非滑动fragment
+				// not move
 				break;
 			}
 			moveDis = event.getRawY() - beginY;
-			if (isFirstMoveEvent) {
-				isFirstMoveEvent = false;
-				switch (direction) {
-				case BOTTOM:
-					if (moveDis <= 0)
-						isMoveFragment = false;
-					break;
-				case TOP:
-					if (moveDis >= 0)
-						isMoveFragment = false;
-					break;
-				case VERTICAL:
-					if (moveDis == 0)
-						isMoveFragment = false;
-					break;
-				default:
-					break;
-				}
-				if (!isMoveFragment) {
-
-					break;
-				}
-			} else {
-				switch (direction) {
-				case BOTTOM:
-					if (moveDis <= 0)
-						moveDis = 0;
-					break;
-				case TOP:
-					if (moveDis >= 0)
-						moveDis = 0;
-					break;
-				case VERTICAL:
-					break;
-				default:
-					break;
-				}
+			
+			//judge whether  distance of moving over or not
+			switch (direction) {
+			case BOTTOM:
+				if (moveDis <= 0)
+					moveDis = 0;
+				break;
+			case TOP:
+				if (moveDis >= 0)
+					moveDis = 0;
+				break;
+			case VERTICAL:
+				break;
+			default:
+				break;
 			}
 
 			FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) v
@@ -242,7 +204,22 @@ public class SlideFrameLayout extends FrameLayout {
 				break;
 
 			moveDis = event.getRawY() - beginY;
-			float dis = -moveDis;
+			//judge whether  distance of moving over or not
+			switch (direction) {
+			case BOTTOM:
+				if (moveDis <= 0)
+					moveDis = 0;
+				break;
+			case TOP:
+				if (moveDis >= 0)
+					moveDis = 0;
+				break;
+			case VERTICAL:
+				break;
+			default:
+				break;
+			}
+			
 			boolean disappear = false;
 			float from = 0,
 			to = -moveDis;
@@ -354,11 +331,6 @@ public class SlideFrameLayout extends FrameLayout {
 
 	}
 
-	@Override
-	public boolean dispatchTouchEvent(MotionEvent ev) {
-
-		return super.dispatchTouchEvent(ev);
-	}
 
 	float beginX = 0, beginY = 0;
 
@@ -366,11 +338,11 @@ public class SlideFrameLayout extends FrameLayout {
 	boolean isFirstMoveEvent = false;
 
 	private boolean judgeVertical(View v, MotionEvent event) {
-		float moveDis = 0;
 
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_DOWN:
 			beginY = event.getRawY();
+			beginX = event.getRawX();
 			isFirstMoveEvent = true;
 			isMoveFragment = false;
 			Log.i("", "touch ACTION_DOWN beginX---" + beginY);
@@ -380,9 +352,18 @@ public class SlideFrameLayout extends FrameLayout {
 			return false;
 		case MotionEvent.ACTION_MOVE:
 			
-			moveDis = event.getRawY() - beginY;
+			
 			if (isFirstMoveEvent) {
 				isFirstMoveEvent = false;
+				isMoveFragment = true ;
+				float moveDis = event.getRawY() - beginY;
+				float moveDisH = Math.abs(event.getRawX() - beginX) ;
+				if(moveDisH > 0){
+					//  move horizonal 
+					isMoveFragment = false;
+					break;
+				}
+				
 				switch (direction) {
 				case BOTTOM:
 					if (moveDis <= 0)
@@ -418,11 +399,11 @@ public class SlideFrameLayout extends FrameLayout {
 	}
 
 	private boolean judgeHorizonal(View v, MotionEvent event) {
-		float moveDis = 0;
 
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_DOWN:
 			beginX = event.getRawX();
+			beginY = event.getRawY();
 			isFirstMoveEvent = true;
 			isMoveFragment = false;
 			Log.i("", "touch ACTION_DOWN beginX---" + beginX);
@@ -432,16 +413,22 @@ public class SlideFrameLayout extends FrameLayout {
 			return false;
 		case MotionEvent.ACTION_MOVE:
 			
-			moveDis = event.getRawX() - beginX;
 			if (isFirstMoveEvent) {
+				float moveDis = event.getRawX() - beginX;
+				float  moveDisV =Math.abs( event.getRawY() - beginY );
 				isFirstMoveEvent = false;
 				isMoveFragment = true ;
+				if(moveDisV > 0){
+					// if has move vertical 
+					isMoveFragment = false;
+					break;
+				}
 				switch (direction) {
-				case LEFT:
-					if (moveDis <= 0)
+				case RIGHT:
+					if (moveDis <= 0 )
 						isMoveFragment = false;
 					break;
-				case RIGHT:
+				case LEFT:
 					if (moveDis >= 0)
 						isMoveFragment = false;
 					break;
@@ -456,7 +443,6 @@ public class SlideFrameLayout extends FrameLayout {
 			}
 			
 			if (!isMoveFragment) {
-
 				break;
 			}
 			
@@ -484,6 +470,7 @@ public class SlideFrameLayout extends FrameLayout {
 		case VERTICAL:
 			res = slideVerticalFinish(this, event);
 			break;
+			default:
 		}
 		return res;
 	}
@@ -503,8 +490,12 @@ public class SlideFrameLayout extends FrameLayout {
 		case BOTTOM:
 		case VERTICAL:
 			judgeRes = judgeVertical(this, ev);
+			break;
+		case NO:
+			judgeRes = false;
+			break;
 		}
-		Log.d(TAG, "onInterceptTouchEvent --- > " + judgeRes);
+		Log.i(TAG, "onInterceptTouchEvent--"+judgeRes);
 		return judgeRes;
 	}
 

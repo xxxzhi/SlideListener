@@ -6,6 +6,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.houzhi.slidefinish.widget.SlideFrameLayout;
+import com.houzhi.slidefinish.widget.SlideFrameLayout.SlideDirection;
 import com.scut.houzhi.qqemailtransdemo.R;
 
 public class TestSlideActivity extends BaseActivity {
@@ -20,9 +21,10 @@ public class TestSlideActivity extends BaseActivity {
 		View view = getLayoutInflater().inflate(R.layout.activity_test, null);
 		SlideFrameLayout slideFrameLayout = new SlideFrameLayout(this);
 		slideFrameLayout.addView(view);
+		slideFrameLayout.setDirection(SlideDirection.BOTTOM);
 		setContentView(slideFrameLayout);
 		
-
+		
 		slideFrameLayout.setSlideListener(new SlideFrameLayout.SlideListener() {
 			
 			@Override

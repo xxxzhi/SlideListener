@@ -45,23 +45,23 @@ public class SlideFrameLayout extends FrameLayout {
 	 * @author houzhi
 	 * 
 	 */
-	public static interface SlideListener {
+	public static interface OnSlideListener {
 		/**
 		 * 
 		 */
 		public void onSlideFinish();
 	}
 
-	private SlideListener mSlideListener;
+	private OnSlideListener mOnSlideListener;
 
 	protected FrameLayout.LayoutParams saveParams = null;
 
-	public SlideListener getSlideListener() {
-		return mSlideListener;
+	public OnSlideListener getOnSlideListener() {
+		return mOnSlideListener;
 	}
 
-	public void setSlideListener(SlideListener mSlideListener) {
-		this.mSlideListener = mSlideListener;
+	public void setOnSlideListener(OnSlideListener mSlideListener) {
+		this.mOnSlideListener = mSlideListener;
 	}
 
 	private void init() {
@@ -77,9 +77,6 @@ public class SlideFrameLayout extends FrameLayout {
 		float moveDis = 0;
 
 		switch (event.getAction()) {
-		case MotionEvent.ACTION_DOWN:
-			
-			break;
 		case MotionEvent.ACTION_MOVE:
 			if (!isMoveFragment) {
 				// doesn't move
@@ -259,14 +256,11 @@ public class SlideFrameLayout extends FrameLayout {
 			@Override
 			public void onAnimationEnd(Animation arg0) {
 				if (disappear) {
-					if (mSlideListener != null) {
-						mSlideListener.onSlideFinish();
+					if (mOnSlideListener != null) {
+						mOnSlideListener.onSlideFinish();
 					}
 				} else {
-					// 恢复 一定要清除动画，否则动画效果仍然在，params 效果 跟Animation 效果同时作用着
-					view.clearAnimation();
-					view.setLayoutParams(saveParams);
-
+					recoverFromSlide();
 				}
 			}
 
@@ -285,6 +279,14 @@ public class SlideFrameLayout extends FrameLayout {
 
 	}
 
+	/**
+	 * recover from slide finish 
+	 */
+	public void recoverFromSlide(){
+		clearAnimation();
+		setLayoutParams(saveParams);
+	}
+	
 	// move vertical animation
 	private void startEndVerticalAnimation(final View view, long duration,
 			float from, float to, final boolean disappear) {
@@ -305,21 +307,18 @@ public class SlideFrameLayout extends FrameLayout {
 			@Override
 			public void onAnimationEnd(Animation arg0) {
 				if (disappear) {
-					if (mSlideListener != null) {
-						mSlideListener.onSlideFinish();
+					if (mOnSlideListener != null) {
+						mOnSlideListener.onSlideFinish();
 					}
 				} else {
-					// 恢复 一定要清除动画，否则动画效果仍然在，params 效果 跟Animation 效果同时作用着
-					view.clearAnimation();
-					view.setLayoutParams(saveParams);
+					
+					recoverFromSlide();
 
 				}
 			}
 
 			@Override
-			public void onAnimationRepeat(Animation arg0) {
-
-			}
+			public void onAnimationRepeat(Animation arg0) {}
 
 			@Override
 			public void onAnimationStart(Animation arg0) {
@@ -436,10 +435,7 @@ public class SlideFrameLayout extends FrameLayout {
 					if (moveDis == 0)
 						isMoveFragment = false;
 					break;
-				default:
-					break;
 				}
-				
 			}
 			
 			if (!isMoveFragment) {

@@ -25,7 +25,7 @@ public class TestSlideActivity extends BaseActivity {
 		setContentView(slideFrameLayout);
 		
 		
-		slideFrameLayout.setSlideListener(new SlideFrameLayout.SlideListener() {
+		slideFrameLayout.setOnSlideListener(new SlideFrameLayout.OnSlideListener() {
 			
 			@Override
 			public void onSlideFinish() {

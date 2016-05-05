@@ -6,6 +6,7 @@
     <string name="app_name">滑动监听</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="slide_bottom">请向下滑动</string>
+    <string name="slide_fragment_end">唔，所有的Fragment都移除啦~~~</string>
     <string name="slide_h">请沿水平方向滑动</string>
     <string name="slide_left">请向左滑动</string>
     <string name="slide_right">请向右滑动</string>

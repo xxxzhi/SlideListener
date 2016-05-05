@@ -10,7 +10,10 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
+
+import com.houzhi.slidefinish.R;
 
 /**
  * @author houzhi
@@ -68,4 +71,16 @@ public abstract class BaseSlideFinishFragment extends Fragment {
 	 */
 	abstract protected View onCreateContentView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState);
+
+	@Override
+	public void onViewCreated(View view, Bundle savedInstanceState) {
+		super.onViewCreated(view, savedInstanceState);
+		final Button bt = (Button)view.findViewById(R.id.bt_test);
+		bt.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				bt.setText("invoke onclick");
+			}
+		});
+	}
 }

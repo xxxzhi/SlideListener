@@ -11,6 +11,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_world">Hello world!</string>
     <string name="slide_bottom">please slide to bottom</string>
+    <string name="slide_fragment_end">oh! all fragment have been removed</string>
     <string name="slide_h">please slide horizontal</string>
     <string name="slide_left">please slide to left</string>
     <string name="slide_right">please slide to right</string>

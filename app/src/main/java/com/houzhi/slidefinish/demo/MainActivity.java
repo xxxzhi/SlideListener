@@ -36,13 +36,13 @@ public class MainActivity extends FragmentActivity implements BaseSlideFinishFra
 
 		
 		transaction.add(R.id.content, DemoSlideHFinishFragment.newInstance(Color.RED), "first");
-		transaction.add(R.id.content, DemoSlideRightFinishFragment1.newInstance(Color.BLUE), "first");
+
 		transaction.add(R.id.content, DemoSlideLeftFinishFragment1.newInstance(Color.GREEN), "green");
 
 //		transaction.add(R.id.content, DemoSlideTopFinishFragment1.newInstance(Color.YELLOW), "YELLOW");
 		transaction.add(R.id.content, DemoSlideBottomFinishFragment1.newInstance(Color.MAGENTA), "MAGENTA");
-		
-		
+
+		transaction.add(R.id.content, DemoSlideRightFinishFragment1.newInstance(Color.BLUE), "first");
 		
 		
 		transaction.commit();

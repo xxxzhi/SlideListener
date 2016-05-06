@@ -100,28 +100,39 @@ public class SlideFrameLayout extends FrameLayout {
     }
 
     boolean onlyBorderValid = false;
+    private static final int MARGE_BORDER_FOR_SLIDE = 4;
 
     private boolean checkHorizontalMove(MotionEvent event) {
+        Log.i(LOGTAG, "checkHorizontalMove---" + event.getAction());
         if (event.getAction() != MotionEvent.ACTION_MOVE) return false;
+
         if (isFirstMoveEvent && !isMove) {
+            isFirstMoveEvent = false;
+            isMove = true;
+            Log.i(LOGTAG, "checkHorizontalMove---beginX: " + beginX + ",saveParams.leftMargin" + saveParams.leftMargin);
             // only the event slide from border can move at normal
-            if (isOnlyBorderValid() || childHasRespond) {
+            if (isOnlyBorderValid() && childHasRespond) {
                 switch (direction) {
                     case RIGHT:
-                        if (beginX > 0 + 2) return false;
+                        if (beginX > 0 + MARGE_BORDER_FOR_SLIDE) {
+                            isMove = false;
+                            return false;
+                        }
                         break;
                     case LEFT:
-                        if (beginX < saveParams.width - 2) return false;
+                        if (beginX < saveParams.width - MARGE_BORDER_FOR_SLIDE) {
+                            isMove = false;
+                            return false;
+                        }
                         break;
                     case HORIZONAL:
                         break;
                 }
             }
 
-            float moveDis = event.getRawX() - beginX;
-            float moveDisV = Math.abs(event.getRawY() - beginY);
-            isFirstMoveEvent = false;
-            isMove = true;
+            float moveDis = event.getRawX() - beginRawX;
+            float moveDisV = Math.abs(event.getRawY() - beginRawY);
+
             if (moveDisV > MOVE_DIRECTION_THRESHOLD) {
                 // if has move vertical , 已经往垂直方向移动了
                 isMove = false;
@@ -150,15 +161,22 @@ public class SlideFrameLayout extends FrameLayout {
         if (event.getAction() != MotionEvent.ACTION_MOVE) return false;
 
         if (isFirstMoveEvent && !isMove) {// only the first action_move to check whether this action move or not.
-
+            isFirstMoveEvent = false;
+            isMove = true;
             // only the event slide from border can move
-            if (isOnlyBorderValid() || childHasRespond) {
+            if (isOnlyBorderValid() && childHasRespond) {
                 switch (direction) {
                     case BOTTOM:
-                        if (beginY > 0 + 2) return false;
+                        if (beginY > 0 + MARGE_BORDER_FOR_SLIDE) {
+                            isMove = false;
+                            return false;
+                        }
                         break;
                     case TOP:
-                        if (beginX < saveParams.height - 2) return false;
+                        if (beginY < saveParams.height - MARGE_BORDER_FOR_SLIDE){
+                            isMove = false;
+                            return false;
+                        }
                         break;
                     case HORIZONAL:
                         break;
@@ -167,9 +185,9 @@ public class SlideFrameLayout extends FrameLayout {
 
             isFirstMoveEvent = false;
             isMove = true;
-            float moveDis = event.getRawY() - beginY;
+            float moveDis = event.getRawY() - beginRawY;
             Log.i(LOGTAG, "touch ACTION_DOWN moveDis---" + moveDis);
-            float moveDisH = Math.abs(event.getRawX() - beginX);
+            float moveDisH = Math.abs(event.getRawX() - beginRawX);
             if (moveDisH > MOVE_DIRECTION_THRESHOLD) {
                 //  move horizonal
                 isMove = false;
@@ -212,7 +230,7 @@ public class SlideFrameLayout extends FrameLayout {
                     // doesn't move
                     break;
                 }
-                moveDis = event.getRawX() - beginX;
+                moveDis = event.getRawX() - beginRawX;
 
                 switch (direction) {
                     case RIGHT:
@@ -243,7 +261,7 @@ public class SlideFrameLayout extends FrameLayout {
                 if (!isMove)
                     break;
 
-                moveDis = event.getRawX() - beginX;
+                moveDis = event.getRawX() - beginRawX;
                 switch (direction) {
                     case RIGHT:
                         if (moveDis <= 0)
@@ -292,7 +310,7 @@ public class SlideFrameLayout extends FrameLayout {
                     Log.i(LOGTAG, "touch ACTION_MOVE--- not move --");
                     break;
                 }
-                moveDis = event.getRawY() - beginY;
+                moveDis = event.getRawY() - beginRawY;
 
                 switch (direction) {
                     case BOTTOM:
@@ -322,7 +340,7 @@ public class SlideFrameLayout extends FrameLayout {
                 if (!isMove)
                     break;
 
-                moveDis = event.getRawY() - beginY;
+                moveDis = event.getRawY() - beginRawY;
                 //judge whether  distance of moving over or not
                 switch (direction) {
                     case BOTTOM:
@@ -462,8 +480,8 @@ public class SlideFrameLayout extends FrameLayout {
     }
 
 
+    float beginRawX = 0, beginRawY = 0;
     float beginX = 0, beginY = 0;
-
     boolean isMove = false;
     boolean isFirstMoveEvent = false;
 
@@ -491,16 +509,22 @@ public class SlideFrameLayout extends FrameLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
+        Log.i(LOGTAG, "touch onInterceptTouchEvent---" + event.getAction());
         //当为MotionEvent.ACTION_MOVE时,
         // 如果子类不消耗当前事件流，那么onInterceptTouchEvent将不会被调用,也就是说只有子类会消耗这次事件流，才会调用onInterceptTouchEvent
+
+        Log.i(LOGTAG, "onInterceptTouchEvent---beginX: " + event.getX() + ","+getWidth()+","+getLeft()+","+event.getRawX());
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                childHasRespond = false;
                 if (isAnimationRunning) return false;
-                beginX = event.getRawX();
-                beginY = event.getRawY();
+                beginRawX = event.getRawX();
+                beginRawY = event.getRawY();
+                beginX = event.getX();
+                beginY = event.getY();
                 isFirstMoveEvent = true;
                 isMove = false;
-                Log.i(LOGTAG, "touch ACTION_DOWN beginX---" + beginX);
+                Log.i(LOGTAG, "touch ACTION_DOWN beginRawX---" + beginRawX);
 
                 saveParams = new FrameLayout.LayoutParams(
                         (ViewGroup.MarginLayoutParams) this.getLayoutParams());

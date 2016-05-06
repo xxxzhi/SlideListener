@@ -17,7 +17,7 @@ public class TestSlideActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		View view = getLayoutInflater().inflate(R.layout.activity_test, null);
+		View view = getLayoutInflater().inflate(R.layout.fragment_blank1, null);
 		SlideFrameLayout slideFrameLayout = new SlideFrameLayout(this);
 		slideFrameLayout.addView(view);
 		slideFrameLayout.setDirection(SlideDirection.RIGHT);
@@ -30,8 +30,18 @@ public class TestSlideActivity extends FragmentActivity {
 				finish();
 			}
 		});
-		
-		
+//
+//		setContentView(R.layout.fragment_blank2);
+//		SlideFrameLayout slideFrameLayout = (SlideFrameLayout)findViewById(R.id.layout);
+//		slideFrameLayout.setDirection(SlideDirection.RIGHT);
+//
+//		slideFrameLayout.setOnSlideListener(new SlideFrameLayout.OnSlideListener() {
+//
+//			@Override
+//			public void onSlideFinish() {
+//				finish();
+//			}
+//		});
 	}
 
 }

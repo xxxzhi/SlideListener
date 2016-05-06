@@ -18,7 +18,6 @@ public class BlankFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
     private int bgColor;
@@ -55,38 +54,38 @@ public class BlankFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_blank, container, false);
+        View v = inflater.inflate(R.layout.fragment_blank1, container, false);
         v.setBackgroundColor(bgColor);
 
-        v.setOnTouchListener(new View.OnTouchListener() {
-            float beginX = 0;
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                Log.i("", "touch" + event.getAction());
-                float moveDis = 0;
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        beginX = event.getX();
-                        break;
-                    case MotionEvent.ACTION_MOVE:
-                        moveDis = event.getX() - beginX;
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        moveDis = event.getX() - beginX;
-                        break;
-                }
-
-                FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) v.getLayoutParams();
-
-                params.leftMargin += moveDis;
-                params.rightMargin -= moveDis;
-                params.gravity = Gravity.LEFT | Gravity.TOP;
-                v.setLayoutParams(params);
-
-                return true;
-            }
-        });
+//        v.setOnTouchListener(new View.OnTouchListener() {
+//            float beginX = 0;
+//
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                Log.i("", "touch" + event.getAction());
+//                float moveDis = 0;
+//                switch (event.getAction()) {
+//                    case MotionEvent.ACTION_DOWN:
+//                        beginX = event.getX();
+//                        break;
+//                    case MotionEvent.ACTION_MOVE:
+//                        moveDis = event.getX() - beginX;
+//                        break;
+//                    case MotionEvent.ACTION_UP:
+//                        moveDis = event.getX() - beginX;
+//                        break;
+//                }
+//
+//                FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) v.getLayoutParams();
+//
+//                params.leftMargin += moveDis;
+//                params.rightMargin -= moveDis;
+//                params.gravity = Gravity.LEFT | Gravity.TOP;
+//                v.setLayoutParams(params);
+//
+//                return true;
+//            }
+//        });
 
         return v;
     }

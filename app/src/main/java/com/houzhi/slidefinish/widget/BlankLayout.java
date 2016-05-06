@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 /**
  * Created by houzhi on 16-5-5.
  */
-public class BlankLayout extends View {
+public class BlankLayout extends FrameLayout {
     private static final String LOGTAG = "BlankLayout";
 
     public BlankLayout(Context context) {
@@ -25,13 +25,13 @@ public class BlankLayout extends View {
 
 
 
-//    @Override
-//    public boolean onInterceptTouchEvent(MotionEvent ev) {
-////        requestDisallowInterceptTouchEvent(false);
-//        boolean res =  super.onInterceptTouchEvent(ev);
-//        Log.i(LOGTAG, "onInterceptTouchEvent--" + "    " + res);
-//        return res;
-//    }
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+//        requestDisallowInterceptTouchEvent(false);
+        boolean res =  super.onInterceptTouchEvent(ev);
+        Log.i(LOGTAG, "onInterceptTouchEvent--" + "    " + res);
+        return res;
+    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {

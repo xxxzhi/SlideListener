@@ -28,27 +28,27 @@ public class DemoSlideBottomFinishFragment1 extends BaseSlideFinishFragment {
 	@Nullable
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_blank1, container, false);
-//		TextView tv = (TextView)view.findViewById(R.id.tv_hint);
-//		tv.setText(R.string.slide_bottom);
-//		SlideFrameLayout slideFrameLayout = new SlideFrameLayout(getActivity());
-//		slideFrameLayout.addView(view);
-//		slideFrameLayout.setDirection(SlideFrameLayout.SlideDirection.BOTTOM);
-//
-//		slideFrameLayout.setOnSlideListener(new SlideFrameLayout.OnSlideListener() {
-//
-//			@Override
-//			public void onSlideFinish() {
-//				mOnFragmentWantFinishListener
-//						.onSlideFragmentFinish(DemoSlideBottomFinishFragment1.this);
-//			}
-//		});
-//
-//
-//
-//		slideFrameLayout.setBackgroundColor(bgColor);
-//
-//		return slideFrameLayout;
+		View view = inflater.inflate(R.layout.fragment_blank, container, false);
+		TextView tv = (TextView)view.findViewById(R.id.tv_hint);
+		tv.setText(R.string.slide_bottom);
+		SlideFrameLayout slideFrameLayout = new SlideFrameLayout(getActivity());
+		slideFrameLayout.addView(view);
+		slideFrameLayout.setDirection(SlideFrameLayout.SlideDirection.BOTTOM);
+
+		slideFrameLayout.setOnSlideListener(new SlideFrameLayout.OnSlideListener() {
+
+			@Override
+			public void onSlideFinish() {
+				mOnFragmentWantFinishListener
+						.onSlideFragmentFinish(DemoSlideBottomFinishFragment1.this);
+			}
+		});
+
+
+
+		slideFrameLayout.setBackgroundColor(bgColor);
+
+		return slideFrameLayout;
 
 
 //		view.setOnTouchListener(new View.OnTouchListener() {
@@ -58,7 +58,7 @@ public class DemoSlideBottomFinishFragment1 extends BaseSlideFinishFragment {
 //				return false;
 //			}
 //		});
-		return view;
+//		return view;
 	}
 
 	//滑动方向

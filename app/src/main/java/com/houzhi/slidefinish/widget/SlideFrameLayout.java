@@ -2,11 +2,13 @@ package com.houzhi.slidefinish.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -23,16 +25,19 @@ public class SlideFrameLayout extends FrameLayout {
     public SlideFrameLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
+        BorderLengthForSlide = 4;
     }
 
     public SlideFrameLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
+        BorderLengthForSlide = 4;
     }
 
     public SlideFrameLayout(Context context) {
         super(context);
         init();
+        BorderLengthForSlide = 4;
     }
 
     public static enum SlideDirection {
@@ -76,7 +81,9 @@ public class SlideFrameLayout extends FrameLayout {
                 ViewGroup.LayoutParams.MATCH_PARENT);
         params.gravity = Gravity.TOP | Gravity.LEFT;
         setLayoutParams(params);
-
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        ((WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(displayMetrics);
+        BorderLengthForSlide = (int) (10 * displayMetrics.density);
     }
 
 
@@ -100,7 +107,16 @@ public class SlideFrameLayout extends FrameLayout {
     }
 
     boolean onlyBorderValid = false;
-    private static final int MARGE_BORDER_FOR_SLIDE = 4;
+
+    public int getBorderLengthForSlide() {
+        return BorderLengthForSlide;
+    }
+
+    public void setBorderLengthForSlide(int borderLengthForSlide) {
+        BorderLengthForSlide = borderLengthForSlide;
+    }
+
+    private int BorderLengthForSlide;
 
     private boolean checkHorizontalMove(MotionEvent event) {
         Log.i(LOGTAG, "checkHorizontalMove---" + event.getAction());
@@ -114,13 +130,13 @@ public class SlideFrameLayout extends FrameLayout {
             if (isOnlyBorderValid() && childHasRespond) {
                 switch (direction) {
                     case RIGHT:
-                        if (beginX > 0 + MARGE_BORDER_FOR_SLIDE) {
+                        if (beginX > 0 + BorderLengthForSlide) {
                             isMove = false;
                             return false;
                         }
                         break;
                     case LEFT:
-                        if (beginX < saveParams.width - MARGE_BORDER_FOR_SLIDE) {
+                        if (beginX < saveParams.width - BorderLengthForSlide) {
                             isMove = false;
                             return false;
                         }
@@ -167,13 +183,13 @@ public class SlideFrameLayout extends FrameLayout {
             if (isOnlyBorderValid() && childHasRespond) {
                 switch (direction) {
                     case BOTTOM:
-                        if (beginY > 0 + MARGE_BORDER_FOR_SLIDE) {
+                        if (beginY > 0 + BorderLengthForSlide) {
                             isMove = false;
                             return false;
                         }
                         break;
                     case TOP:
-                        if (beginY < saveParams.height - MARGE_BORDER_FOR_SLIDE){
+                        if (beginY < saveParams.height - BorderLengthForSlide) {
                             isMove = false;
                             return false;
                         }
@@ -379,6 +395,7 @@ public class SlideFrameLayout extends FrameLayout {
     // move horizontal animation
     private void startEndHorizontalAnimation(final View view, long duration,
                                              float from, float to, final boolean disappear) {
+        isAnimationRunning = true;
         AnimationSet animationSet = new AnimationSet(true);
 
         if (disappear) {
@@ -416,7 +433,7 @@ public class SlideFrameLayout extends FrameLayout {
 
             }
         });
-        isAnimationRunning = true;
+
         view.startAnimation(animationSet);
 
     }
@@ -433,6 +450,7 @@ public class SlideFrameLayout extends FrameLayout {
     // move vertical animation
     private void startEndVerticalAnimation(final View view, long duration,
                                            float from, float to, final boolean disappear) {
+        isAnimationRunning = true;
         AnimationSet animationSet = new AnimationSet(true);
 
         if (disappear) {
@@ -474,7 +492,7 @@ public class SlideFrameLayout extends FrameLayout {
                 Log.i(LOGTAG, "onAnimationStart");
             }
         });
-        isAnimationRunning = true;
+
         view.startAnimation(animationSet);
 
     }
@@ -513,7 +531,7 @@ public class SlideFrameLayout extends FrameLayout {
         //当为MotionEvent.ACTION_MOVE时,
         // 如果子类不消耗当前事件流，那么onInterceptTouchEvent将不会被调用,也就是说只有子类会消耗这次事件流，才会调用onInterceptTouchEvent
 
-        Log.i(LOGTAG, "onInterceptTouchEvent---beginX: " + event.getX() + ","+getWidth()+","+getLeft()+","+event.getRawX());
+        Log.i(LOGTAG, "onInterceptTouchEvent---beginX: " + event.getX() + "," + getWidth() + "," + getLeft() + "," + event.getRawX());
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 childHasRespond = false;

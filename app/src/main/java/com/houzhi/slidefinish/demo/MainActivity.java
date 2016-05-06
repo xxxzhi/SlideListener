@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -27,8 +28,7 @@ public class MainActivity extends FragmentActivity implements BaseSlideFinishFra
 		
 		
 		fragmentManager = getSupportFragmentManager();
-		
-		
+
 		FragmentTransaction transaction =fragmentManager.beginTransaction();
 
 		

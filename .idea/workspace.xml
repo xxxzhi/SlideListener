@@ -26,14 +26,37 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="onInterceptTouchEvent" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Unnamed-0" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f954fa78-3b13-4b02-95f4-5991e1930b24" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideBottomFinishFragment1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideHFinishFragment1$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideHFinishFragment1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideLeftFinishFragment1$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideLeftFinishFragment1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideRightFinishFragment1$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideRightFinishFragment1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideTopFinishFragment1$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideTopFinishFragment1.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideBottomFinishFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideBottomFinishFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideHFinishFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideHFinishFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideLeftFinishFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideLeftFinishFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideRightFinishFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideRightFinishFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideTopFinishFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideTopFinishFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/MainActivity$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$menu.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$SlideDirection.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$SlideDirection.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
@@ -41,9 +64,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/classes.dex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/houzhi/slidefinish/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/houzhi/slidefinish/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/widget/SlideFrameLayout.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/widget/SlideFrameLayout.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeResourcesdebug/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeResourcesdebug/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SlideListener.iws" />
@@ -90,21 +117,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fragment_blank2.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_blank2.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.0">
-              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-              <folding>
-                <element signature="e#742#763#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TestSlideActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/TestSlideActivity.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -122,22 +134,24 @@
       <file leaf-file-name="SlideFrameLayout.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/widget/SlideFrameLayout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44176707">
-              <caret line="173" column="30" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.3253012">
+              <caret line="112" column="5" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1665#1666#0" expanded="true" />
-                <element signature="e#1704#1705#0" expanded="true" />
-                <element signature="e#2294#2295#0" expanded="true" />
-                <element signature="e#2326#2327#0" expanded="true" />
-                <element signature="e#2384#2385#0" expanded="true" />
-                <element signature="e#2426#2427#0" expanded="true" />
-                <element signature="e#2468#2469#0" expanded="true" />
-                <element signature="e#2506#2507#0" expanded="true" />
-                <element signature="e#16040#16041#0" expanded="true" />
-                <element signature="e#16106#16107#0" expanded="true" />
-                <element signature="e#16188#16189#0" expanded="true" />
-                <element signature="e#16253#16254#0" expanded="true" />
+                <element signature="e#1838#1839#0" expanded="true" />
+                <element signature="e#1877#1878#0" expanded="true" />
+                <element signature="e#2724#2725#0" expanded="true" />
+                <element signature="e#2756#2757#0" expanded="true" />
+                <element signature="e#2814#2815#0" expanded="true" />
+                <element signature="e#2856#2857#0" expanded="true" />
+                <element signature="e#2898#2899#0" expanded="true" />
+                <element signature="e#2936#2937#0" expanded="true" />
+                <element signature="e#3135#3136#0" expanded="true" />
+                <element signature="e#3178#3179#0" expanded="true" />
+                <element signature="e#16696#16697#0" expanded="true" />
+                <element signature="e#16762#16763#0" expanded="true" />
+                <element signature="e#16844#16845#0" expanded="true" />
+                <element signature="e#16909#16910#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,10 +171,20 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DisplayMetrics.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/program/android/sdk/sources/android-22/android/util/DisplayMetrics.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="151" column="24" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1848,7 +1872,7 @@
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="192.168.56.101:5555" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="A10ECN42P77R" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="android5" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
@@ -2080,7 +2104,19 @@
       <option name="project" value="LOCAL" />
       <updated>1462523574480</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add considering child consumed event and add only border valid move interface.">
+      <created>1462526156398</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1462526156398</updated>
+    </task>
+    <task id="LOCAL-00005" summary="remove useless Fragment Demo">
+      <created>1462526230347</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1462526230347</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2106,7 +2142,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951945" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951945" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -2119,7 +2155,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951945" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2178,7 +2214,9 @@
     <MESSAGE value="remove ontouchlistener" />
     <MESSAGE value="fix bugs when move during animation starting" />
     <MESSAGE value="fix bugs when child consume event. for scroll childview" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bugs when child consume event. for scroll childview" />
+    <MESSAGE value="add considering child consumed event and add only border valid move interface." />
+    <MESSAGE value="remove useless Fragment Demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove useless Fragment Demo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2310,7 +2348,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/fragment/DemoSlideHFinishFragment1.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/fragment/DemoSlideHFinishFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
@@ -2318,7 +2356,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/fragment/DemoSlideLeftFinishFragment1.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/fragment/DemoSlideLeftFinishFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="0" selection-start-line="23" selection-start-column="8" selection-end-line="25" selection-end-column="0" />
@@ -2326,12 +2364,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/fragment/DemoSlideRightFinishFragment1.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/fragment/DemoSlideRightFinishFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
-            <element signature="e#831#851#0" expanded="true" />
+            <element signature="e#830#850#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2350,12 +2388,12 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/fragment/DemoSlideTopFinishFragment1.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/fragment/DemoSlideTopFinishFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="62" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
           <folding>
-            <element signature="e#829#847#0" expanded="true" />
+            <element signature="e#828#846#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2378,22 +2416,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/fragment/DemoSlideTopFinishFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/fragment/DemoSlideBottomFinishFragment1.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/fragment/DemoSlideBottomFinishFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.142857">
           <caret line="31" column="62" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="62" />
           <folding>
-            <element signature="e#1135#1156#0" expanded="true" />
-            <element signature="e#1380#1577#0" expanded="true" />
-            <element signature="e#1576#1577#0" expanded="true" />
+            <element signature="e#831#852#0" expanded="true" />
+            <element signature="e#1076#1272#0" expanded="true" />
+            <element signature="e#1271#1272#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2403,19 +2433,6 @@
         <state vertical-scroll-proportion="-4.8">
           <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="15" selection-end-column="10" />
           <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_blank2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding>
-            <element signature="e#742#763#0" expanded="true" />
-          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -2497,16 +2514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/program/android/sdk/sources/android-22/android/view/MotionEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.559322">
@@ -2527,24 +2534,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/widget/SlideFrameLayout.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44176707">
-          <caret line="173" column="30" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1665#1666#0" expanded="true" />
-            <element signature="e#1704#1705#0" expanded="true" />
-            <element signature="e#2294#2295#0" expanded="true" />
-            <element signature="e#2326#2327#0" expanded="true" />
-            <element signature="e#2384#2385#0" expanded="true" />
-            <element signature="e#2426#2427#0" expanded="true" />
-            <element signature="e#2468#2469#0" expanded="true" />
-            <element signature="e#2506#2507#0" expanded="true" />
-            <element signature="e#16040#16041#0" expanded="true" />
-            <element signature="e#16106#16107#0" expanded="true" />
-            <element signature="e#16188#16189#0" expanded="true" />
-            <element signature="e#16253#16254#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/program/android/sdk/sources/android-22/android/util/DisplayMetrics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="151" column="24" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/widget/SlideFrameLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3253012">
+          <caret line="112" column="5" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1838#1839#0" expanded="true" />
+            <element signature="e#1877#1878#0" expanded="true" />
+            <element signature="e#2724#2725#0" expanded="true" />
+            <element signature="e#2756#2757#0" expanded="true" />
+            <element signature="e#2814#2815#0" expanded="true" />
+            <element signature="e#2856#2857#0" expanded="true" />
+            <element signature="e#2898#2899#0" expanded="true" />
+            <element signature="e#2936#2937#0" expanded="true" />
+            <element signature="e#3135#3136#0" expanded="true" />
+            <element signature="e#3178#3179#0" expanded="true" />
+            <element signature="e#16696#16697#0" expanded="true" />
+            <element signature="e#16762#16763#0" expanded="true" />
+            <element signature="e#16844#16845#0" expanded="true" />
+            <element signature="e#16909#16910#0" expanded="true" />
           </folding>
         </state>
       </provider>

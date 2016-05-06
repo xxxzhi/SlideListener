@@ -14,6 +14,7 @@ import android.view.View;
 import com.houzhi.slidefinish.demo.fragment.DemoSlideBottomFinishFragment;
 import com.houzhi.slidefinish.demo.fragment.DemoSlideBottomFinishFragment1;
 import com.houzhi.slidefinish.R;
+import com.houzhi.slidefinish.demo.fragment.DemoSlideHFinishFragment;
 import com.houzhi.slidefinish.demo.fragment.DemoSlideHFinishFragment1;
 import com.houzhi.slidefinish.demo.fragment.DemoSlideLeftFinishFragment1;
 import com.houzhi.slidefinish.demo.fragment.DemoSlideRightFinishFragment1;
@@ -34,7 +35,7 @@ public class MainActivity extends FragmentActivity implements BaseSlideFinishFra
 		FragmentTransaction transaction =fragmentManager.beginTransaction();
 
 		
-		transaction.add(R.id.content, DemoSlideHFinishFragment1.newInstance(Color.RED), "first");
+		transaction.add(R.id.content, DemoSlideHFinishFragment.newInstance(Color.RED), "first");
 		transaction.add(R.id.content, DemoSlideRightFinishFragment1.newInstance(Color.BLUE), "first");
 		transaction.add(R.id.content, DemoSlideLeftFinishFragment1.newInstance(Color.GREEN), "green");
 

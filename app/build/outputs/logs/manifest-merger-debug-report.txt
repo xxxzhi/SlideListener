@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/houzhi/AndroidstudioProjects/SlideListener/app/src/main/AndroidManifest.xml:2:1-33:12
+ADDED from /home/houzhi/AndroidstudioProjects/SlideListener/app/src/main/AndroidManifest.xml:2:1-32:12
 	xmlns:android
 		ADDED from /home/houzhi/AndroidstudioProjects/SlideListener/app/src/main/AndroidManifest.xml:2:11-69
 	package
@@ -25,7 +25,7 @@ MERGED from [com.android.support:support-v4:22.2.0] /home/houzhi/AndroidstudioPr
 		INJECTED from /home/houzhi/AndroidstudioProjects/SlideListener/app/src/main/AndroidManifest.xml
 		INJECTED from /home/houzhi/AndroidstudioProjects/SlideListener/app/src/main/AndroidManifest.xml
 application
-ADDED from /home/houzhi/AndroidstudioProjects/SlideListener/app/src/main/AndroidManifest.xml:11:5-31:19
+ADDED from /home/houzhi/AndroidstudioProjects/SlideListener/app/src/main/AndroidManifest.xml:11:5-30:19
 MERGED from [com.android.support:support-v4:22.2.0] /home/houzhi/AndroidstudioProjects/SlideListener/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from /home/houzhi/AndroidstudioProjects/SlideListener/app/src/main/AndroidManifest.xml:14:9-41
@@ -52,8 +52,10 @@ ADDED from /home/houzhi/AndroidstudioProjects/SlideListener/app/src/main/Android
 	android:name
 		ADDED from /home/houzhi/AndroidstudioProjects/SlideListener/app/src/main/AndroidManifest.xml:22:27-74
 activity#com.houzhi.slidefinish.demo.TestSlideActivity
-ADDED from /home/houzhi/AndroidstudioProjects/SlideListener/app/src/main/AndroidManifest.xml:25:9-29:3
+ADDED from /home/houzhi/AndroidstudioProjects/SlideListener/app/src/main/AndroidManifest.xml:25:9-28:75
 	android:label
 		ADDED from /home/houzhi/AndroidstudioProjects/SlideListener/app/src/main/AndroidManifest.xml:27:13-56
+	android:theme
+		ADDED from /home/houzhi/AndroidstudioProjects/SlideListener/app/src/main/AndroidManifest.xml:28:13-72
 	android:name
 		ADDED from /home/houzhi/AndroidstudioProjects/SlideListener/app/src/main/AndroidManifest.xml:26:13-73

@@ -38,6 +38,7 @@ public class BlankLayout extends FrameLayout {
 //        requestDisallowInterceptTouchEvent(false);
         boolean res =  super.onTouchEvent(event);
         Log.i(LOGTAG, "onTouchEvent--" + "    " + res);
+//        if(event.getAction() == MotionEvent.ACTION_DOWN) return true;
         return res;
     }
 }

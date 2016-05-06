@@ -24,8 +24,8 @@
         </activity>
         <activity
             android:name="com.houzhi.slidefinish.demo.TestSlideActivity"
-            android:label="@string/title_activity_main" />
-        <!-- android:theme="@android:style/Theme.Translucent.NoTitleBar" -->
+            android:label="@string/title_activity_main"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
     </application>
 
 </manifest>

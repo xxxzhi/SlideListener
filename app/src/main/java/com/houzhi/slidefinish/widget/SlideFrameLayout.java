@@ -79,6 +79,126 @@ public class SlideFrameLayout extends FrameLayout {
 
     }
 
+
+    public static final String LOGTAG = "SlideFrameLayout";
+    private SlideDirection direction = SlideDirection.RIGHT;
+
+    public SlideDirection getDirection() {
+        return direction;
+    }
+
+    public void setDirection(SlideDirection direction) {
+        this.direction = direction;
+    }
+
+    public boolean isOnlyBorderValid() {
+        return onlyBorderValid;
+    }
+
+    public void setOnlyBorderValid(boolean onlyBorderValid) {
+        this.onlyBorderValid = onlyBorderValid;
+    }
+
+    boolean onlyBorderValid = false;
+
+    private boolean checkHorizontalMove(MotionEvent event) {
+        if (event.getAction() != MotionEvent.ACTION_MOVE) return false;
+        if (isFirstMoveEvent && !isMove) {
+            // only the event slide from border can move at normal
+            if (isOnlyBorderValid() || childHasRespond) {
+                switch (direction) {
+                    case RIGHT:
+                        if (beginX > 0 + 2) return false;
+                        break;
+                    case LEFT:
+                        if (beginX < saveParams.width - 2) return false;
+                        break;
+                    case HORIZONAL:
+                        break;
+                }
+            }
+
+            float moveDis = event.getRawX() - beginX;
+            float moveDisV = Math.abs(event.getRawY() - beginY);
+            isFirstMoveEvent = false;
+            isMove = true;
+            if (moveDisV > MOVE_DIRECTION_THRESHOLD) {
+                // if has move vertical , 已经往垂直方向移动了
+                isMove = false;
+            } else {
+                switch (direction) {
+                    case RIGHT:
+                        if (moveDis <= 0)
+                            isMove = false;
+                        break;
+                    case LEFT:
+                        if (moveDis >= 0)
+                            isMove = false;
+                        break;
+                    case HORIZONAL:
+                        if (moveDis == 0)
+                            isMove = false;
+                        break;
+                }
+            }
+        }
+        return isMove;
+    }
+
+
+    private boolean checkVerticalMove(MotionEvent event) {
+        if (event.getAction() != MotionEvent.ACTION_MOVE) return false;
+
+        if (isFirstMoveEvent && !isMove) {// only the first action_move to check whether this action move or not.
+
+            // only the event slide from border can move
+            if (isOnlyBorderValid() || childHasRespond) {
+                switch (direction) {
+                    case BOTTOM:
+                        if (beginY > 0 + 2) return false;
+                        break;
+                    case TOP:
+                        if (beginX < saveParams.height - 2) return false;
+                        break;
+                    case HORIZONAL:
+                        break;
+                }
+            }
+
+            isFirstMoveEvent = false;
+            isMove = true;
+            float moveDis = event.getRawY() - beginY;
+            Log.i(LOGTAG, "touch ACTION_DOWN moveDis---" + moveDis);
+            float moveDisH = Math.abs(event.getRawX() - beginX);
+            if (moveDisH > MOVE_DIRECTION_THRESHOLD) {
+                //  move horizonal
+                isMove = false;
+            } else {
+                //judge whether  distance of moving over or not
+                switch (direction) {
+                    case BOTTOM:
+                        if (moveDis <= 0) {
+                            isMove = false;
+                        }
+                        break;
+                    case TOP:
+                        if (moveDis >= 0) {
+                            isMove = false;
+                        }
+                        break;
+                    case VERTICAL:
+                        if (moveDis == 0) {
+                            isMove = false;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        return isMove;
+    }
+
     private boolean slideHorizontalFinish(View v, MotionEvent event) {
         Log.i(LOGTAG, "slideHorizontalFinish--" + "    ");
         float moveDis = 0;
@@ -86,19 +206,9 @@ public class SlideFrameLayout extends FrameLayout {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 if (isAnimationRunning) return false;
-                beginX = event.getRawX();
-                beginY = event.getRawY();
-                isFirstMoveEvent = true;
-                isMove = false;
-                Log.i(LOGTAG, "touch ACTION_DOWN beginX---" + beginX);
-
-                saveParams = new FrameLayout.LayoutParams(
-                        (ViewGroup.MarginLayoutParams) v.getLayoutParams());
-//                return false;
-//                break;
                 return true;
             case MotionEvent.ACTION_MOVE:
-                if (!checkHorizontalMove(event)) {
+                if (!childHasRespond && !checkHorizontalMove(event)) {
                     // doesn't move
                     break;
                 }
@@ -123,8 +233,8 @@ public class SlideFrameLayout extends FrameLayout {
                 FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) v
                         .getLayoutParams();
 
-                params.leftMargin = (int) moveDis;
-                params.rightMargin = (int) -moveDis;
+                params.leftMargin = saveParams.leftMargin + (int) moveDis;
+                params.rightMargin = saveParams.rightMargin + (int) -moveDis;
                 params.gravity = Gravity.LEFT | Gravity.TOP;
                 Log.i(LOGTAG, "touch ACTION_MOVE---" + moveDis + "--" + event.getRawX());
                 v.setLayoutParams(params);
@@ -167,111 +277,38 @@ public class SlideFrameLayout extends FrameLayout {
 
     }
 
-    public static final String LOGTAG = "SlideFrameLayout";
-    private SlideDirection direction = SlideDirection.RIGHT;
-
-    public SlideDirection getDirection() {
-        return direction;
-    }
-
-    public void setDirection(SlideDirection direction) {
-        this.direction = direction;
-    }
-
-
-    private boolean checkHorizontalMove(MotionEvent event) {
-        if (event.getAction() != MotionEvent.ACTION_MOVE) return false;
-        if (isFirstMoveEvent) {
-            float moveDis = event.getRawX() - beginX;
-            float moveDisV = Math.abs(event.getRawY() - beginY);
-            isFirstMoveEvent = false;
-            isMove = true;
-            if (moveDisV > MOVE_DIRECTION_THRESHOLD) {
-                // if has move vertical , 已经往垂直方向移动了
-                isMove = false;
-            } else {
-                switch (direction) {
-                    case RIGHT:
-                        if (moveDis <= 0)
-                            isMove = false;
-                        break;
-                    case LEFT:
-                        if (moveDis >= 0)
-                            isMove = false;
-                        break;
-                    case HORIZONAL:
-                        if (moveDis == 0)
-                            isMove = false;
-                        break;
-                }
-            }
-        }
-        return isMove;
-    }
-
-
-    private boolean checkVerticalMove(MotionEvent event) {
-        if (isFirstMoveEvent) {
-            // only the first action_move to check whether this action move or not.
-            isFirstMoveEvent = false;
-            isMove = true;
-            float moveDis = event.getRawY() - beginY;
-            Log.i(LOGTAG, "touch ACTION_DOWN moveDis---" + moveDis);
-            float moveDisH = Math.abs(event.getRawX() - beginX);
-            if (moveDisH > MOVE_DIRECTION_THRESHOLD) {
-                //  move horizonal
-                isMove = false;
-            } else {
-                //judge whether  distance of moving over or not
-                switch (direction) {
-                    case BOTTOM:
-                        if (moveDis <= 0) {
-                            isMove = false;
-                        }
-                        break;
-                    case TOP:
-                        if (moveDis >= 0) {
-                            isMove = false;
-                        }
-                        break;
-                    case VERTICAL:
-                        if (moveDis == 0) {
-                            isMove = false;
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-        return isMove;
-    }
-
     private boolean slideVerticalFinish(View v, MotionEvent event) {
         Log.i(LOGTAG, "slideVerticalFinish--" + "    ");
         float moveDis = 0;
-//        judgeVertical(v, event);
+//        judgeVerticalForIntercept(v, event);
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 if (isAnimationRunning) return false;
-                beginY = event.getRawY();
-                beginX = event.getRawX();
-                isFirstMoveEvent = true;
-                isMove = false;
-                Log.i(LOGTAG, "touch ACTION_DOWN beginX---" + beginY);
-
-                saveParams = new FrameLayout.LayoutParams(
-                        (ViewGroup.MarginLayoutParams) v.getLayoutParams());
-                Log.i(LOGTAG, saveParams.leftMargin + "," + saveParams.rightMargin + "," + saveParams.topMargin + "," + saveParams.bottomMargin);
                 return true;
             case MotionEvent.ACTION_MOVE:
 
-                if (!checkVerticalMove(event)) {
+                if (!childHasRespond && !checkVerticalMove(event)) {
                     // not move
                     Log.i(LOGTAG, "touch ACTION_MOVE--- not move --");
                     break;
                 }
                 moveDis = event.getRawY() - beginY;
+
+                switch (direction) {
+                    case BOTTOM:
+                        if (moveDis <= 0)
+                            moveDis = 0;
+                        break;
+                    case TOP:
+                        if (moveDis >= 0)
+                            moveDis = 0;
+                        break;
+                    case VERTICAL:
+                        break;
+                    default:
+                        break;
+                }
+
                 FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) v
                         .getLayoutParams();
 
@@ -450,27 +487,46 @@ public class SlideFrameLayout extends FrameLayout {
         return res;
     }
 
+    boolean childHasRespond = false;
 
     @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-//        boolean judgeRes = false;
-//        switch (direction) {
-//            case LEFT:
-//            case RIGHT:
-//            case HORIZONAL:
-//                judgeRes = judgeHorizonal(this, ev);
-//                break;
-//            case TOP:
-//            case BOTTOM:
-//            case VERTICAL:
-//                judgeRes = judgeVertical(this, ev);
-//                break;
-//            case NO:
-//                judgeRes = false;
-//                break;
-//        }
-//        Log.i(LOGTAG, "onInterceptTouchEvent--" + direction + "    " + judgeRes);
-        return isMove;
+    public boolean onInterceptTouchEvent(MotionEvent event) {
+        //当为MotionEvent.ACTION_MOVE时,
+        // 如果子类不消耗当前事件流，那么onInterceptTouchEvent将不会被调用,也就是说只有子类会消耗这次事件流，才会调用onInterceptTouchEvent
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                if (isAnimationRunning) return false;
+                beginX = event.getRawX();
+                beginY = event.getRawY();
+                isFirstMoveEvent = true;
+                isMove = false;
+                Log.i(LOGTAG, "touch ACTION_DOWN beginX---" + beginX);
+
+                saveParams = new FrameLayout.LayoutParams(
+                        (ViewGroup.MarginLayoutParams) this.getLayoutParams());
+                return false;
+            case MotionEvent.ACTION_MOVE:
+                childHasRespond = true;
+                switch (direction) {
+                    case LEFT:
+                    case RIGHT:
+                    case HORIZONAL:
+                        return checkHorizontalMove(event);
+                    case TOP:
+                    case BOTTOM:
+                    case VERTICAL:
+                        return checkVerticalMove(event);
+                    case NO:
+                        return false;
+                }
+            case MotionEvent.ACTION_UP:
+                if (!isMove)
+                    break;
+                return true;
+        }
+
+        return false;
+
     }
 
 }

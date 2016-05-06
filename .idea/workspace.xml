@@ -30,137 +30,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Unnamed-0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f954fa78-3b13-4b02-95f4-5991e1930b24" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/app.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/generated/source/buildConfig/androidTest/debug/com/scut/houzhi/qqemailtransdemo/test/BuildConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/generated/source/buildConfig/debug/com/scut/houzhi/qqemailtransdemo/BuildConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/generated/source/r/debug/com/scut/houzhi/qqemailtransdemo/R.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/demo/BaseActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/demo/BlankFragment$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/demo/BlankFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/demo/MainActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/demo/MainActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/demo/TestSlideActivity$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/demo/TestSlideActivity$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/demo/TestSlideActivity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/BaseSlideFinishFragment$SlideFragmentFinishListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/BaseSlideFinishFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/SlideBottomFinishFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/SlideHorizonalFinishFragment$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/SlideHorizonalFinishFragment$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/SlideHorizonalFinishFragment$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/SlideHorizonalFinishFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/SlideLeftFinishFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/SlideRightFinishFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/SlideTopFinishFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/SlideVerticalFinishFragment$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/SlideVerticalFinishFragment$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/SlideVerticalFinishFragment$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/SlideVerticalFinishFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/demo/DemoSlideBottomFinishFragment$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/demo/DemoSlideBottomFinishFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/demo/DemoSlideHFinishFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/demo/DemoSlideLeftFinishFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/demo/DemoSlideRightFinishFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/fragment/demo/DemoSlideTopFinishFragment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$OnSlideListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$SlideDirection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/scut/houzhi/qqemailtransdemo/BuildConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/scut/houzhi/qqemailtransdemo/R$attr.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/scut/houzhi/qqemailtransdemo/R$dimen.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/scut/houzhi/qqemailtransdemo/R$drawable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/scut/houzhi/qqemailtransdemo/R$id.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/scut/houzhi/qqemailtransdemo/R$layout.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/scut/houzhi/qqemailtransdemo/R$menu.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/scut/houzhi/qqemailtransdemo/R$string.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/scut/houzhi/qqemailtransdemo/R$style.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/classes/debug/com/scut/houzhi/qqemailtransdemo/R.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/dex/debug/classes.dex" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aapt/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/MediaMetadataCompat.aidl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/RatingCompat.aidl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/session/MediaSessionCompat.aidl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/session/ParcelableVolumeInfo.aidl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/session/PlaybackStateCompat.aidl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/annotations.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/incremental/aidl/androidTest/debug/dependency.store" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/incremental/aidl/debug/dependency.store" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/incremental/mergeAssets/debug/merger.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/incremental/mergeResourcesandroidTest/debug/merger.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/incremental/mergeResourcesdebug/merger.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/manifest/androidTest/debug/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/pre-dexed/debug/classes-14ae822ecfd491bdd1081a789265343066291507.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-06c4b88fe4cbb84d295735d849e0db56cc9b5c4a.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-5989d47156eefbdcb7af7b91a52dfaf10dedce17.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/res/merged/debug/drawable-hdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/res/merged/debug/drawable-mdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/res/merged/debug/drawable-xhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/res/merged/debug/layout/activity_main.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/res/merged/debug/layout/activity_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/res/merged/debug/layout/fragment_blank.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/res/merged/debug/layout/fragment_view_plipper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/res/merged/debug/menu/main.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/res/merged/debug/values-sw720dp-land/values-sw720dp-land.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/res/merged/debug/values-v11/values-v11.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/res/merged/debug/values-v14/values-v14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/res/merged/debug/values/values.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/res/resources-debug.ap_" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/intermediates/symbols/debug/R.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/outputs/apk/app-debug-unaligned.apk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/outputs/apk/app-debug.apk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/AndroidManifest.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/demo/BaseActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/demo/BlankFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/demo/MainActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/demo/TestSlideActivity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/slidefinish/fragment/BaseSlideFinishFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/slidefinish/fragment/SlideBottomFinishFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/slidefinish/fragment/SlideHorizonalFinishFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/slidefinish/fragment/SlideLeftFinishFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/slidefinish/fragment/SlideRightFinishFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/slidefinish/fragment/SlideTopFinishFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/slidefinish/fragment/SlideVerticalFinishFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/slidefinish/fragment/demo/DemoSlideBottomFinishFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/slidefinish/fragment/demo/DemoSlideHFinishFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/slidefinish/fragment/demo/DemoSlideLeftFinishFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/slidefinish/fragment/demo/DemoSlideRightFinishFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/slidefinish/fragment/demo/DemoSlideTopFinishFragment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/slidefinish/fragment/demo/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/slidefinish/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/slidefinish/widget/SlideFrameLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/java/com/houzhi/slidefinish/widget/package-info.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/res/drawable-hdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/res/drawable-mdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/res/drawable-xhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/res/drawable-xxhdpi/ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/res/layout/activity_main.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/res/layout/activity_test.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/res/layout/fragment_blank.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/res/layout/fragment_view_plipper.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/res/menu/main.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/res/values-sw600dp/dimens.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/res/values-sw720dp-land/dimens.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/res/values-v11/styles.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/res/values-v14/styles.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/res/values/dimens.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/res/values/strings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlideListener/src/main/res/values/styles.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="f954fa78-3b13-4b02-95f4-5991e1930b24" name="Default" comment="" />
     <ignored path="SlideListener.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -2052,7 +1922,13 @@
       <option name="project" value="LOCAL" />
       <updated>1462529837303</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="gitignore">
+      <created>1462532731972</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1462532731972</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2153,7 +2029,8 @@
     <MESSAGE value="add considering child consumed event and add only border valid move interface." />
     <MESSAGE value="remove useless Fragment Demo" />
     <MESSAGE value="reset default borderlengthForSlide" />
-    <option name="LAST_COMMIT_MESSAGE" value="reset default borderlengthForSlide" />
+    <MESSAGE value="gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

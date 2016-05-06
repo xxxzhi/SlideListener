@@ -29,43 +29,20 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Unnamed-0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f954fa78-3b13-4b02-95f4-5991e1930b24" name="Default" comment="use slideframelayout to replace baseFragment">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/BlankFragment$1.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/BlankFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/BlankFragment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/BlankLayout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/BlankLayout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideBottomFinishFragment1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/fragment/DemoSlideBottomFinishFragment1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$menu.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$menu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$string.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R$style.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/R.class" />
+    <list default="true" id="f954fa78-3b13-4b02-95f4-5991e1930b24" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$4.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/widget/SlideFrameLayout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/TestSlideActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/houzhi/slidefinish/demo/TestSlideActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/classes.dex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/BlankFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/BlankFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/widget/BlankLayout.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/widget/BlankLayout.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/fragment/DemoSlideBottomFinishFragment1.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/fragment/DemoSlideBottomFinishFragment1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/houzhi/slidefinish/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/houzhi/slidefinish/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/widget/SlideFrameLayout.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/widget/SlideFrameLayout.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/TestSlideActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/demo/TestSlideActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/fragment_blank1.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/fragment_blank1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_blank1.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_blank1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeResourcesdebug/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeResourcesdebug/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SlideListener.iws" />
@@ -170,20 +147,20 @@
       <file leaf-file-name="SlideFrameLayout.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/widget/SlideFrameLayout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5301205">
-              <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.2248996">
+              <caret line="393" column="0" selection-start-line="393" selection-start-column="0" selection-end-line="393" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1665#1666#0" expanded="true" />
                 <element signature="e#1704#1705#0" expanded="true" />
-                <element signature="e#5423#5424#0" expanded="true" />
-                <element signature="e#5455#5456#0" expanded="true" />
-                <element signature="e#5513#5514#0" expanded="true" />
+                <element signature="e#5465#5466#0" expanded="true" />
+                <element signature="e#5497#5498#0" expanded="true" />
                 <element signature="e#5555#5556#0" expanded="true" />
-                <element signature="e#12740#12741#0" expanded="true" />
-                <element signature="e#12805#12806#0" expanded="true" />
-                <element signature="e#12887#12888#0" expanded="true" />
-                <element signature="e#12951#12952#0" expanded="true" />
+                <element signature="e#5597#5598#0" expanded="true" />
+                <element signature="e#14233#14234#0" expanded="true" />
+                <element signature="e#14299#14300#0" expanded="true" />
+                <element signature="e#14381#14382#0" expanded="true" />
+                <element signature="e#14446#14447#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2074,6 +2051,13 @@
       <option name="number" value="Default" />
       <updated>1462439682567</updated>
     </task>
+    <task id="LOCAL-00001" summary="remove ontouchlistener">
+      <created>1462518505447</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1462518505447</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2160,7 +2144,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="use slideframelayout to replace baseFragment" />
-    <option name="LAST_COMMIT_MESSAGE" value="use slideframelayout to replace baseFragment" />
+    <MESSAGE value="remove ontouchlistener" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove ontouchlistener" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2498,20 +2483,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/houzhi/slidefinish/widget/SlideFrameLayout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5301205">
-          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.2248996">
+          <caret line="393" column="0" selection-start-line="393" selection-start-column="0" selection-end-line="393" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1665#1666#0" expanded="true" />
             <element signature="e#1704#1705#0" expanded="true" />
-            <element signature="e#5423#5424#0" expanded="true" />
-            <element signature="e#5455#5456#0" expanded="true" />
-            <element signature="e#5513#5514#0" expanded="true" />
+            <element signature="e#5465#5466#0" expanded="true" />
+            <element signature="e#5497#5498#0" expanded="true" />
             <element signature="e#5555#5556#0" expanded="true" />
-            <element signature="e#12740#12741#0" expanded="true" />
-            <element signature="e#12805#12806#0" expanded="true" />
-            <element signature="e#12887#12888#0" expanded="true" />
-            <element signature="e#12951#12952#0" expanded="true" />
+            <element signature="e#5597#5598#0" expanded="true" />
+            <element signature="e#14233#14234#0" expanded="true" />
+            <element signature="e#14299#14300#0" expanded="true" />
+            <element signature="e#14381#14382#0" expanded="true" />
+            <element signature="e#14446#14447#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -25,19 +25,16 @@ public class SlideFrameLayout extends FrameLayout {
     public SlideFrameLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
-        BorderLengthForSlide = 4;
     }
 
     public SlideFrameLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
-        BorderLengthForSlide = 4;
     }
 
     public SlideFrameLayout(Context context) {
         super(context);
         init();
-        BorderLengthForSlide = 4;
     }
 
     public static enum SlideDirection {
@@ -83,7 +80,6 @@ public class SlideFrameLayout extends FrameLayout {
         setLayoutParams(params);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         ((WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(displayMetrics);
-        BorderLengthForSlide = (int) (10 * displayMetrics.density);
     }
 
 
@@ -108,15 +104,6 @@ public class SlideFrameLayout extends FrameLayout {
 
     boolean onlyBorderValid = true;
 
-    public int getBorderLengthForSlide() {
-        return BorderLengthForSlide;
-    }
-
-    public void setBorderLengthForSlide(int borderLengthForSlide) {
-        BorderLengthForSlide = borderLengthForSlide;
-    }
-
-    private int BorderLengthForSlide;
 
     private boolean checkHorizontalMove(MotionEvent event) {
         Log.i(LOGTAG, "checkHorizontalMove---" + event.getAction());
@@ -128,15 +115,16 @@ public class SlideFrameLayout extends FrameLayout {
             Log.i(LOGTAG, "checkHorizontalMove---beginX: " + beginX + ",saveParams.leftMargin" + saveParams.leftMargin);
             // only the event slide from border can move at normal
             if (isOnlyBorderValid() && childHasRespond) {
+
                 switch (direction) {
                     case RIGHT:
-                        if (beginX > 0 + BorderLengthForSlide) {
+                        if(event.getEdgeFlags() != MotionEvent.EDGE_LEFT){
                             isMove = false;
                             return false;
                         }
                         break;
                     case LEFT:
-                        if (beginX < saveParams.width - BorderLengthForSlide) {
+                        if(event.getEdgeFlags() != MotionEvent.EDGE_RIGHT){
                             isMove = false;
                             return false;
                         }
@@ -145,6 +133,8 @@ public class SlideFrameLayout extends FrameLayout {
                         break;
                 }
             }
+
+            Log.i(LOGTAG, "checkHorizontalMove1---beginX: " + beginX + ",saveParams.leftMargin" + saveParams.leftMargin);
 
             float moveDis = event.getRawX() - beginRawX;
             float moveDisV = Math.abs(event.getRawY() - beginRawY);
@@ -183,13 +173,13 @@ public class SlideFrameLayout extends FrameLayout {
             if (isOnlyBorderValid() && childHasRespond) {
                 switch (direction) {
                     case BOTTOM:
-                        if (beginY > 0 + BorderLengthForSlide) {
+                        if(event.getEdgeFlags() != MotionEvent.EDGE_TOP){
                             isMove = false;
                             return false;
                         }
                         break;
                     case TOP:
-                        if (beginY < saveParams.height - BorderLengthForSlide) {
+                        if(event.getEdgeFlags() != MotionEvent.EDGE_BOTTOM){
                             isMove = false;
                             return false;
                         }

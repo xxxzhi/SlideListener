@@ -19,7 +19,7 @@ import com.houzhi.slidefinish.demo.fragment.DemoSlideLeftFinishFragment;
 import com.houzhi.slidefinish.demo.fragment.DemoSlideRightFinishFragment;
 import com.houzhi.slidefinish.fragment.BaseSlideFinishFragment;
 
-public class MainActivity extends FragmentActivity implements BaseSlideFinishFragment.SlideFragmentFinishListener{
+public class MainActivity extends FragmentActivity implements BaseSlideFinishFragment.SlideFragmentFinishListener,View.OnClickListener{
 	FragmentManager fragmentManager = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +46,8 @@ public class MainActivity extends FragmentActivity implements BaseSlideFinishFra
 		
 		
 		
-		findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				Intent intent = new Intent(MainActivity.this, TestSlideActivity.class);
-				startActivity(intent);
-			}
-		});
+		findViewById(R.id.bt1).setOnClickListener(this);
+		findViewById(R.id.bt2).setOnClickListener(this);
 	}
 
 	@Override
@@ -71,4 +65,17 @@ public class MainActivity extends FragmentActivity implements BaseSlideFinishFra
 		transaction.commit();
 	}
 
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+			case R.id.bt1:
+				Intent intent = new Intent(MainActivity.this, TestSlideActivity.class);
+				startActivity(intent);
+				break;
+			case R.id.bt2:
+				Intent intent1 = new Intent(MainActivity.this, TestViewPagerActivity.class);
+				startActivity(intent1);
+				break;
+		}
+	}
 }

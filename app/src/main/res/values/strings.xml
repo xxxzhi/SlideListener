@@ -13,5 +13,6 @@
     <string name="slide_h">please slide horizontal</string>
     <string name="test_slide_activity">test slide for finish Activity</string>
     <string name="slide_fragment_end">oh! all fragment have been removed</string>
+    <string name="title_activity_test_view_pager">TestViewPagerActivity</string>
 
 </resources>

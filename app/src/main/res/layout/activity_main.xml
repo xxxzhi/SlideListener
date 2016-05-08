@@ -17,15 +17,22 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/button1">
+        android:layout_above="@+id/bt1">
 
     </FrameLayout>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/bt1"
+        android:layout_above="@+id/bt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/test_slide_activity" />
+
+    <Button
+        android:id="@+id/bt2"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="@string/test_slide_activity" />
-
+        android:text="@string/title_activity_test_view_pager" />
 </RelativeLayout>

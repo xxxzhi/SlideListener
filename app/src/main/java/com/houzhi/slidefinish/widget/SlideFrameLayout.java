@@ -106,7 +106,7 @@ public class SlideFrameLayout extends FrameLayout {
         this.onlyBorderValid = onlyBorderValid;
     }
 
-    boolean onlyBorderValid = false;
+    boolean onlyBorderValid = true;
 
     public int getBorderLengthForSlide() {
         return BorderLengthForSlide;

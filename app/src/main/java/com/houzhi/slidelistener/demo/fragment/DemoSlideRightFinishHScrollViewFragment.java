@@ -1,4 +1,4 @@
-package com.houzhi.slidefinish.demo.fragment;
+package com.houzhi.slidelistener.demo.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.houzhi.slidefinish.R;
-import com.houzhi.slidefinish.widget.SlideLayout;
+import com.houzhi.slidelistener.R;
+import com.houzhi.slidelistener.widget.DirectionSlideListenerLayout;
 
 public class DemoSlideRightFinishHScrollViewFragment extends BaseDemoSlideFinishFragment {
 
@@ -19,14 +19,14 @@ public class DemoSlideRightFinishHScrollViewFragment extends BaseDemoSlideFinish
 		TextView tv = (TextView)view.findViewById(R.id.tv_hint);
 		tv.setText(R.string.slide_right);
 
-		SlideLayout slideLayout = new SlideLayout(getActivity());
+		DirectionSlideListenerLayout slideLayout = new DirectionSlideListenerLayout(getActivity());
 		slideLayout.addView(view);
-		slideLayout.setDirection(SlideLayout.SlideDirection.RIGHT);
+		slideLayout.setDirection(DirectionSlideListenerLayout.SlideDirection.RIGHT);
 
-		slideLayout.setOnSlideListener(new SlideLayout.OnSlideListener() {
+		slideLayout.setOnSlideListener(new DirectionSlideListenerLayout.OnDirectionSlideListener() {
 
 			@Override
-			public void onSlideFinish() {
+			public void onDirectionSlide() {
 				mOnFragmentWantFinishListener
 						.onSlideFragmentFinish(DemoSlideRightFinishHScrollViewFragment.this);
 			}

@@ -1,4 +1,4 @@
-package com.houzhi.slidefinish.demo.fragment;
+package com.houzhi.slidelistener.demo.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.houzhi.slidefinish.R;
-import com.houzhi.slidefinish.widget.SlideLayout;
+import com.houzhi.slidelistener.R;
+import com.houzhi.slidelistener.widget.DirectionSlideListenerLayout;
 
 public class DemoSlideTopFinishFragment extends BaseDemoSlideFinishFragment {
 
@@ -20,14 +20,14 @@ public class DemoSlideTopFinishFragment extends BaseDemoSlideFinishFragment {
 		TextView tv = (TextView)view.findViewById(R.id.tv_hint);
 		tv.setText(R.string.slide_top);
 
-		SlideLayout slideLayout = new SlideLayout(getActivity());
+		DirectionSlideListenerLayout slideLayout = new DirectionSlideListenerLayout(getActivity());
 		slideLayout.addView(view);
-		slideLayout.setDirection(SlideLayout.SlideDirection.TOP);
+		slideLayout.setDirection(DirectionSlideListenerLayout.SlideDirection.TOP);
 
-		slideLayout.setOnSlideListener(new SlideLayout.OnSlideListener() {
+		slideLayout.setOnSlideListener(new DirectionSlideListenerLayout.OnDirectionSlideListener() {
 
 			@Override
-			public void onSlideFinish() {
+			public void onDirectionSlide() {
 				mOnFragmentWantFinishListener
 						.onSlideFragmentFinish(DemoSlideTopFinishFragment.this);
 			}

@@ -1,6 +1,6 @@
-package com.houzhi.slidefinish.demo.fragment;
+package com.houzhi.slidelistener.demo.fragment;
 
-import com.houzhi.slidefinish.R;
+import com.houzhi.slidelistener.R;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

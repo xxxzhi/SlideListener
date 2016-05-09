@@ -1,51 +1,48 @@
-package com.houzhi.slidefinish.demo;
+package com.houzhi.slidelistener.demo;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.houzhi.slidefinish.R;
-import com.houzhi.slidefinish.demo.fragment.BaseSlideFinishFragment;
-import com.houzhi.slidefinish.demo.fragment.DemoSlideBottomFinishScrollViewFragment;
-import com.houzhi.slidefinish.demo.fragment.DemoSlideHFinishFragment;
-import com.houzhi.slidefinish.demo.fragment.DemoSlideLeftFinishButtonFragment;
-import com.houzhi.slidefinish.demo.fragment.DemoSlideLeftFinishViewPagerFragment;
-import com.houzhi.slidefinish.demo.fragment.DemoSlideRightFinishHScrollViewFragment;
-import com.houzhi.slidefinish.demo.fragment.DemoSlideTopFinishFragment;
-import com.houzhi.slidefinish.widget.SlideLayout;
+import com.houzhi.slidelistener.R;
+import com.houzhi.slidelistener.demo.fragment.BaseSlideFinishFragment;
+import com.houzhi.slidelistener.demo.fragment.DemoSlideBottomFinishScrollViewFragment;
+import com.houzhi.slidelistener.demo.fragment.DemoSlideHFinishFragment;
+import com.houzhi.slidelistener.demo.fragment.DemoSlideLeftFinishButtonFragment;
+import com.houzhi.slidelistener.demo.fragment.DemoSlideLeftFinishViewPagerFragment;
+import com.houzhi.slidelistener.demo.fragment.DemoSlideRightFinishHScrollViewFragment;
+import com.houzhi.slidelistener.demo.fragment.DemoSlideTopFinishFragment;
+import com.houzhi.slidelistener.widget.DirectionSlideListenerLayout;
 
 public class MainActivity extends FragmentActivity implements BaseSlideFinishFragment.SlideFragmentFinishListener {
     FragmentManager fragmentManager = null;
-
+    DirectionSlideListenerLayout slideLayout = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         View view = getLayoutInflater().inflate(R.layout.activity_main, null);
 
-        SlideLayout slideLayout = new SlideLayout(this);
+        slideLayout = new DirectionSlideListenerLayout(this);
         slideLayout.addView(view);
-        slideLayout.setDirection(SlideLayout.SlideDirection.RIGHT);
+        slideLayout.setDirection(DirectionSlideListenerLayout.SlideDirection.RIGHT);
         setContentView(slideLayout);
 
-        slideLayout.setOnSlideListener(new SlideLayout.OnSlideListener() {
+        slideLayout.setOnSlideListener(new DirectionSlideListenerLayout.OnDirectionSlideListener() {
 
             @Override
-            public void onSlideFinish() {
+            public void onDirectionSlide() {
                 finish();
             }
         });
-
-
+        slideLayout.setOnlyBorderValid(true);
+        slideLayout.setEnableListenerSlide(false);
         initFragment();
 
     }
@@ -59,8 +56,6 @@ public class MainActivity extends FragmentActivity implements BaseSlideFinishFra
 
 
         transaction.add(R.id.content, DemoSlideHFinishFragment.newInstance(Color.RED), "HORIZONTAL");
-
-
         transaction.add(R.id.content, DemoSlideTopFinishFragment.newInstance(Color.YELLOW), "TOP");
         transaction.add(R.id.content, DemoSlideBottomFinishScrollViewFragment.newInstance(Color.MAGENTA), "BOTTOM");
         transaction.add(R.id.content, DemoSlideLeftFinishButtonFragment.newInstance(Color.GREEN), "LEFT");
@@ -84,6 +79,10 @@ public class MainActivity extends FragmentActivity implements BaseSlideFinishFra
         transaction.remove(fragment);
 
         transaction.commit();
+
+        if(fragmentManager.getBackStackEntryCount() == 0){
+            slideLayout.setEnableListenerSlide(true);
+        }
     }
 
 }

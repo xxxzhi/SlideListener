@@ -4,25 +4,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <Button
-        android:id="@+id/bt3"
+    <FrameLayout
+        android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:text="@string/title_activity_test_slide_fragment" />
+        android:layout_height="match_parent"
+        tools:context="com.houzhi.slidefinish.demo.TestSlideFragmentActivity"></FrameLayout>
 
-    <Button
-        android:id="@+id/bt1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/bt3"
-        android:text="@string/test_slide_activity" />
-
-    <Button
-        android:id="@+id/bt2"
-        android:layout_below="@+id/bt1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title_activity_test_view_pager" />
 </RelativeLayout>

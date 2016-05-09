@@ -8,14 +8,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.houzhi.slidefinish.R;
-import com.houzhi.slidefinish.fragment.BaseSlideFinishFragment;
 import com.houzhi.slidefinish.widget.SlideLayout;
 
-public class DemoSlideHFinishFragment extends BaseSlideFinishFragment {
+public class DemoSlideHFinishFragment extends BaseDemoSlideFinishFragment {
 
-	private static final String ARG_BG_COLOR = "backgroundcolor";
-
-	private int bgColor;
 
 	@Nullable
 	@Override
@@ -52,16 +48,5 @@ public class DemoSlideHFinishFragment extends BaseSlideFinishFragment {
 	public DemoSlideHFinishFragment() {
 	}
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		if (getArguments() != null) {
-			bgColor = getArguments().getInt(ARG_BG_COLOR);
-		}
-	}
 
-	@Override
-	protected View onCreateContentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		return null;
-	}
 }

@@ -19,7 +19,6 @@ public class SlideLayout extends FrameLayout {
     /**
      * move thershold ，if the distance of moving more than thershold ,this framelayout will be slide.
      */
-    private static final int MOVE_THRESHOLD = 5;
     private static final int MOVE_DIRECTION_THRESHOLD = 6;
 
     public SlideLayout(Context context, AttributeSet attrs, int defStyle) {
@@ -37,11 +36,10 @@ public class SlideLayout extends FrameLayout {
         init();
     }
 
-    public static enum SlideDirection {
+    public enum SlideDirection {
         LEFT, RIGHT, HORIZONAL, TOP, BOTTOM, VERTICAL, NO
     }
 
-    ;
 
     /**
      * listen to the slide
@@ -58,6 +56,27 @@ public class SlideLayout extends FrameLayout {
     private OnSlideListener mOnSlideListener;
 
     protected FrameLayout.LayoutParams saveParams = null;
+
+    private int edgeLengthForSlide;
+    
+    public int getEdgeLengthForSlide() {
+        return edgeLengthForSlide;
+    }
+
+    public void setEdgeLengthForSlide(int edgeLengthForSlide) {
+        this.edgeLengthForSlide = edgeLengthForSlide;
+    }
+
+    private boolean onlyBorderValid;
+
+
+    public boolean isOnlyBorderValid() {
+        return onlyBorderValid;
+    }
+
+    public void setOnlyBorderValid(boolean onlyBorderValid) {
+        this.onlyBorderValid = onlyBorderValid;
+    }
 
     /**
      * mark the animation is starting
@@ -80,19 +99,8 @@ public class SlideLayout extends FrameLayout {
         setLayoutParams(params);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         ((WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(displayMetrics);
-        BorderLengthForSlide = (int) (10 * displayMetrics.density);
+        edgeLengthForSlide = (int) (10 * displayMetrics.density);
     }
-
-
-    public int getBorderLengthForSlide() {
-        return BorderLengthForSlide;
-    }
-
-    public void setBorderLengthForSlide(int borderLengthForSlide) {
-        BorderLengthForSlide = borderLengthForSlide;
-    }
-
-    private int BorderLengthForSlide;
 
 
     public static final String LOGTAG = "SlideFrameLayout";
@@ -106,15 +114,8 @@ public class SlideLayout extends FrameLayout {
         this.direction = direction;
     }
 
-    public boolean isOnlyBorderValid() {
-        return onlyBorderValid;
-    }
 
-    public void setOnlyBorderValid(boolean onlyBorderValid) {
-        this.onlyBorderValid = onlyBorderValid;
-    }
 
-    boolean onlyBorderValid = true;
 
 
     private boolean checkHorizontalMove(MotionEvent event) {
@@ -132,7 +133,7 @@ public class SlideLayout extends FrameLayout {
                 switch (direction) {
                     case RIGHT:
 //                        if(event.getEdgeFlags() != MotionEvent.EDGE_LEFT){
-                            if (beginX > 0 + BorderLengthForSlide) {
+                        if (beginX > 0 + getEdgeLengthForSlide()) {
 //                            Log.i(LOGTAG, "checkHorizontalMove : RIGHT" );
                             isMove = false;
                             return false;
@@ -140,7 +141,7 @@ public class SlideLayout extends FrameLayout {
                         break;
                     case LEFT:
 //                        if(event.getEdgeFlags() != MotionEvent.EDGE_RIGHT){
-                            if (beginX < saveParams.width - BorderLengthForSlide) {
+                        if (beginX < saveParams.width - getEdgeLengthForSlide()) {
                             isMove = false;
                             return false;
                         }
@@ -190,14 +191,14 @@ public class SlideLayout extends FrameLayout {
                 switch (direction) {
                     case BOTTOM:
 //                        if(event.getEdgeFlags() != MotionEvent.EDGE_TOP){ // getEdgeFlags maybe always 0
-                            if (beginY > 0 + BorderLengthForSlide) {
+                        if (beginY > 0 + getEdgeLengthForSlide()) {
                             isMove = false;
                             return false;
                         }
                         break;
                     case TOP:
 //                        if(event.getEdgeFlags() != MotionEvent.EDGE_BOTTOM){
-                            if (beginY < saveParams.height - BorderLengthForSlide) {
+                        if (beginY < saveParams.height - getEdgeLengthForSlide()) {
                             isMove = false;
                             return false;
                         }
@@ -321,7 +322,6 @@ public class SlideLayout extends FrameLayout {
     private boolean slideVerticalFinish(View v, MotionEvent event) {
 //        Log.i(LOGTAG, "slideVerticalFinish--" + "    ");
         float moveDis = 0;
-//        judgeVerticalForIntercept(v, event);
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 if (isAnimationRunning) return false;
@@ -533,7 +533,7 @@ public class SlideLayout extends FrameLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        Log.i(LOGTAG, "touch onInterceptTouchEvent---" + event.getAction()+",getEdgeFlags:"+event.getEdgeFlags());
+        Log.i(LOGTAG, "touch onInterceptTouchEvent---" + event.getAction() + ",getEdgeFlags:" + event.getEdgeFlags());
         //当为MotionEvent.ACTION_MOVE时,
         // 如果子类不消耗当前事件流，那么onInterceptTouchEvent将不会被调用,也就是说只有子类会消耗这次事件流，才会调用onInterceptTouchEvent
 

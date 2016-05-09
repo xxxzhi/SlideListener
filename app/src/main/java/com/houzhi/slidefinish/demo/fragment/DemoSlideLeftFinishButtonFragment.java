@@ -10,26 +10,26 @@ import android.widget.TextView;
 import com.houzhi.slidefinish.R;
 import com.houzhi.slidefinish.widget.SlideLayout;
 
-public class DemoSlideTopFinishFragment extends BaseDemoSlideFinishFragment {
+public class DemoSlideLeftFinishButtonFragment extends BaseDemoSlideFinishFragment {
 
 
 	@Nullable
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_blank, container, false);
+		View view = inflater.inflate(R.layout.fragment_only_button, container, false);
 		TextView tv = (TextView)view.findViewById(R.id.tv_hint);
-		tv.setText(R.string.slide_top);
+		tv.setText(R.string.slide_left);
 
 		SlideLayout slideLayout = new SlideLayout(getActivity());
 		slideLayout.addView(view);
-		slideLayout.setDirection(SlideLayout.SlideDirection.TOP);
+		slideLayout.setDirection(SlideLayout.SlideDirection.LEFT);
 
 		slideLayout.setOnSlideListener(new SlideLayout.OnSlideListener() {
 
 			@Override
 			public void onSlideFinish() {
 				mOnFragmentWantFinishListener
-						.onSlideFragmentFinish(DemoSlideTopFinishFragment.this);
+						.onSlideFragmentFinish(DemoSlideLeftFinishButtonFragment.this);
 			}
 		});
 		slideLayout.setBackgroundColor(bgColor);
@@ -37,15 +37,15 @@ public class DemoSlideTopFinishFragment extends BaseDemoSlideFinishFragment {
 
 	}
 
-	public static DemoSlideTopFinishFragment newInstance(int bgColor) {
-		DemoSlideTopFinishFragment fragment = new DemoSlideTopFinishFragment();
+	public static DemoSlideLeftFinishButtonFragment newInstance(int bgColor) {
+		DemoSlideLeftFinishButtonFragment fragment = new DemoSlideLeftFinishButtonFragment();
 		Bundle args = new Bundle();
 		args.putInt(ARG_BG_COLOR, bgColor);
 		fragment.setArguments(args);
 		return fragment;
 	}
 
-	public DemoSlideTopFinishFragment() {
+	public DemoSlideLeftFinishButtonFragment() {
 	}
 
 

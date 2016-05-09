@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.houzhi.slidefinish.fragment;
+package com.houzhi.slidefinish.demo.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -36,13 +36,8 @@ public abstract class BaseSlideFinishFragment extends Fragment {
 	//监听 fragment 接口
 	protected SlideFragmentFinishListener mOnFragmentWantFinishListener;
 	
-	protected Activity activity ;
-	
-	/**
-	 * 屏幕信息
-	 */
-	protected DisplayMetrics outMetrics = new DisplayMetrics();
-	
+
+
 	@Override
 	public void onAttach(Activity activity) {
 		if(activity instanceof SlideFragmentFinishListener){
@@ -51,36 +46,14 @@ public abstract class BaseSlideFinishFragment extends Fragment {
 			throw new RuntimeException("the Activity which use SlideFinishFragment" +
 					" must implements OnFragmentWantFinishLIstener!");
 		}
-		this.activity = activity ;
-		
-		activity.getWindowManager().getDefaultDisplay().getMetrics(outMetrics);
-		
 		super.onAttach(activity);
 	}
+
 	
-	
-	
-	
-	protected FrameLayout.LayoutParams saveParams = null;
-	/**
-	 * the onCreateView will callback this method 
-	 * @param inflater
-	 * @param container
-	 * @param savedInstanceState
-	 * @return
-	 */
-	abstract protected View onCreateContentView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState);
 
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
-		final Button bt = (Button)view.findViewById(R.id.bt_test);
-		bt.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				bt.setText("invoke onclick");
-			}
-		});
+
 	}
 }

@@ -1,4 +1,4 @@
-SlideLayout
+DirectionSlideListenerLayout
 ==================
 
 好久好久以前模仿QQ邮箱滑动退出写的一个滑动检测的库，看到了决定还是重新修改一下，也重新下熟悉一下事件派发的细节

@@ -32,7 +32,11 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name=".demo.TestViewPagerActivity"
-            android:label="@string/title_activity_test_view_pager"></activity>
+            android:label="@string/title_activity_test_view_pager"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".demo.TestSlideFragmentActivity"
+            android:label="@string/title_activity_test_slide_fragment"></activity>
     </application>
 
 </manifest>

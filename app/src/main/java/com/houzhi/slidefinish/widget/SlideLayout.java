@@ -15,24 +15,24 @@ import android.view.animation.AnimationSet;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 
-public class SlideFrameLayout extends FrameLayout {
+public class SlideLayout extends FrameLayout {
     /**
      * move thershold ，if the distance of moving more than thershold ,this framelayout will be slide.
      */
     private static final int MOVE_THRESHOLD = 5;
     private static final int MOVE_DIRECTION_THRESHOLD = 6;
 
-    public SlideFrameLayout(Context context, AttributeSet attrs, int defStyle) {
+    public SlideLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
 
-    public SlideFrameLayout(Context context, AttributeSet attrs) {
+    public SlideLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public SlideFrameLayout(Context context) {
+    public SlideLayout(Context context) {
         super(context);
         init();
     }
@@ -80,7 +80,19 @@ public class SlideFrameLayout extends FrameLayout {
         setLayoutParams(params);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         ((WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(displayMetrics);
+        BorderLengthForSlide = (int) (10 * displayMetrics.density);
     }
+
+
+    public int getBorderLengthForSlide() {
+        return BorderLengthForSlide;
+    }
+
+    public void setBorderLengthForSlide(int borderLengthForSlide) {
+        BorderLengthForSlide = borderLengthForSlide;
+    }
+
+    private int BorderLengthForSlide;
 
 
     public static final String LOGTAG = "SlideFrameLayout";
@@ -112,19 +124,23 @@ public class SlideFrameLayout extends FrameLayout {
         if (isFirstMoveEvent && !isMove) {
             isFirstMoveEvent = false;
             isMove = true;
-            Log.i(LOGTAG, "checkHorizontalMove---beginX: " + beginX + ",saveParams.leftMargin" + saveParams.leftMargin);
+
+//            Log.i(LOGTAG, "checkHorizontalMove---beginX: " + beginX + ",getEdgeFlags:" + event.getEdgeFlags());
             // only the event slide from border can move at normal
             if (isOnlyBorderValid() && childHasRespond) {
-
+//                Log.i(LOGTAG, "checkHorizontalMove : enter check" );
                 switch (direction) {
                     case RIGHT:
-                        if(event.getEdgeFlags() != MotionEvent.EDGE_LEFT){
+//                        if(event.getEdgeFlags() != MotionEvent.EDGE_LEFT){
+                            if (beginX > 0 + BorderLengthForSlide) {
+//                            Log.i(LOGTAG, "checkHorizontalMove : RIGHT" );
                             isMove = false;
                             return false;
                         }
                         break;
                     case LEFT:
-                        if(event.getEdgeFlags() != MotionEvent.EDGE_RIGHT){
+//                        if(event.getEdgeFlags() != MotionEvent.EDGE_RIGHT){
+                            if (beginX < saveParams.width - BorderLengthForSlide) {
                             isMove = false;
                             return false;
                         }
@@ -134,7 +150,7 @@ public class SlideFrameLayout extends FrameLayout {
                 }
             }
 
-            Log.i(LOGTAG, "checkHorizontalMove1---beginX: " + beginX + ",saveParams.leftMargin" + saveParams.leftMargin);
+//            Log.i(LOGTAG, "checkHorizontalMove1---beginX: " + beginX + ",saveParams.leftMargin" + saveParams.leftMargin);
 
             float moveDis = event.getRawX() - beginRawX;
             float moveDisV = Math.abs(event.getRawY() - beginRawY);
@@ -173,13 +189,15 @@ public class SlideFrameLayout extends FrameLayout {
             if (isOnlyBorderValid() && childHasRespond) {
                 switch (direction) {
                     case BOTTOM:
-                        if(event.getEdgeFlags() != MotionEvent.EDGE_TOP){
+//                        if(event.getEdgeFlags() != MotionEvent.EDGE_TOP){ // getEdgeFlags maybe always 0
+                            if (beginY > 0 + BorderLengthForSlide) {
                             isMove = false;
                             return false;
                         }
                         break;
                     case TOP:
-                        if(event.getEdgeFlags() != MotionEvent.EDGE_BOTTOM){
+//                        if(event.getEdgeFlags() != MotionEvent.EDGE_BOTTOM){
+                            if (beginY < saveParams.height - BorderLengthForSlide) {
                             isMove = false;
                             return false;
                         }
@@ -192,7 +210,7 @@ public class SlideFrameLayout extends FrameLayout {
             isFirstMoveEvent = false;
             isMove = true;
             float moveDis = event.getRawY() - beginRawY;
-            Log.i(LOGTAG, "touch ACTION_DOWN moveDis---" + moveDis);
+//            Log.i(LOGTAG, "touch ACTION_DOWN moveDis---" + moveDis);
             float moveDisH = Math.abs(event.getRawX() - beginRawX);
             if (moveDisH > MOVE_DIRECTION_THRESHOLD) {
                 //  move horizonal
@@ -260,7 +278,6 @@ public class SlideFrameLayout extends FrameLayout {
                 params.leftMargin = saveParams.leftMargin + (int) moveDis;
                 params.rightMargin = saveParams.rightMargin + (int) -moveDis;
                 params.gravity = Gravity.LEFT | Gravity.TOP;
-                Log.i(LOGTAG, "touch ACTION_MOVE---" + moveDis + "--" + event.getRawX());
                 v.setLayoutParams(params);
                 return true;
             case MotionEvent.ACTION_UP:
@@ -292,8 +309,8 @@ public class SlideFrameLayout extends FrameLayout {
                     disappear = true;
                 }
                 long duration = 500;
-                Log.i(LOGTAG, "touch dis---" + disappear + "=---=" + (moveDis) + "---"
-                        + v.getWidth());
+//                Log.i(LOGTAG, "touch dis---" + disappear + "=---=" + (moveDis) + "---"
+//                        + v.getWidth());
                 startEndHorizontalAnimation(v, duration, from, to, disappear);
                 return true;
         }
@@ -302,7 +319,7 @@ public class SlideFrameLayout extends FrameLayout {
     }
 
     private boolean slideVerticalFinish(View v, MotionEvent event) {
-        Log.i(LOGTAG, "slideVerticalFinish--" + "    ");
+//        Log.i(LOGTAG, "slideVerticalFinish--" + "    ");
         float moveDis = 0;
 //        judgeVerticalForIntercept(v, event);
         switch (event.getAction()) {
@@ -339,7 +356,7 @@ public class SlideFrameLayout extends FrameLayout {
                 params.topMargin = saveParams.topMargin + (int) moveDis;
                 params.bottomMargin = saveParams.bottomMargin + (int) -moveDis;
                 params.gravity = Gravity.LEFT | Gravity.TOP;
-                Log.i(LOGTAG, "touch ACTION_MOVE---" + moveDis + "--" + event.getRawY());
+//                Log.i(LOGTAG, "touch ACTION_MOVE---" + moveDis + "--" + event.getRawY());
                 v.setLayoutParams(params);
                 return true;
             case MotionEvent.ACTION_UP:
@@ -372,8 +389,8 @@ public class SlideFrameLayout extends FrameLayout {
                     disappear = true;
                 }
                 long duration = 500;
-                Log.i(LOGTAG, "touch dis---" + disappear + "=---=" + (moveDis) + "---"
-                        + v.getWidth());
+//                Log.i(LOGTAG, "touch dis---" + disappear + "=---=" + (moveDis) + "---"
+//                        + v.getWidth());
                 startEndVerticalAnimation(v, duration, from, to, disappear);
                 return true;
         }
@@ -433,7 +450,6 @@ public class SlideFrameLayout extends FrameLayout {
      */
     public void recoverFromSlide() {
         clearAnimation();
-        Log.i(LOGTAG, saveParams.leftMargin + "," + saveParams.rightMargin + "," + saveParams.topMargin + "," + saveParams.bottomMargin);
         setLayoutParams(saveParams);
     }
 
@@ -517,7 +533,7 @@ public class SlideFrameLayout extends FrameLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        Log.i(LOGTAG, "touch onInterceptTouchEvent---" + event.getAction());
+        Log.i(LOGTAG, "touch onInterceptTouchEvent---" + event.getAction()+",getEdgeFlags:"+event.getEdgeFlags());
         //当为MotionEvent.ACTION_MOVE时,
         // 如果子类不消耗当前事件流，那么onInterceptTouchEvent将不会被调用,也就是说只有子类会消耗这次事件流，才会调用onInterceptTouchEvent
 
@@ -532,7 +548,6 @@ public class SlideFrameLayout extends FrameLayout {
                 beginY = event.getY();
                 isFirstMoveEvent = true;
                 isMove = false;
-                Log.i(LOGTAG, "touch ACTION_DOWN beginRawX---" + beginRawX);
 
                 saveParams = new FrameLayout.LayoutParams(
                         (ViewGroup.MarginLayoutParams) this.getLayoutParams());

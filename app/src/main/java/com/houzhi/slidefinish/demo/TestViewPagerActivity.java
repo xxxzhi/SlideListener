@@ -1,7 +1,6 @@
 package com.houzhi.slidefinish.demo;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -11,7 +10,7 @@ import android.view.View;
 
 import com.houzhi.slidefinish.R;
 import com.houzhi.slidefinish.demo.fragment.BlankFragment;
-import com.houzhi.slidefinish.widget.SlideFrameLayout;
+import com.houzhi.slidefinish.widget.SlideLayout;
 
 public class TestViewPagerActivity extends FragmentActivity {
 
@@ -24,12 +23,12 @@ public class TestViewPagerActivity extends FragmentActivity {
         vPager.setAdapter(new TestPagerAdapter(getSupportFragmentManager()));
 
 
-        SlideFrameLayout slideFrameLayout = new SlideFrameLayout(this);
-        slideFrameLayout.addView(view);
-        slideFrameLayout.setDirection(SlideFrameLayout.SlideDirection.RIGHT);
-        setContentView(slideFrameLayout);
+        SlideLayout slideLayout = new SlideLayout(this);
+        slideLayout.addView(view);
+        slideLayout.setDirection(SlideLayout.SlideDirection.RIGHT);
+        setContentView(slideLayout);
 
-        slideFrameLayout.setOnSlideListener(new SlideFrameLayout.OnSlideListener() {
+        slideLayout.setOnSlideListener(new SlideLayout.OnSlideListener() {
 
             @Override
             public void onSlideFinish() {

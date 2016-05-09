@@ -13,7 +13,7 @@ import android.view.animation.AnimationSet;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 
-import com.houzhi.slidefinish.widget.SlideFrameLayout.SlideDirection;
+import com.houzhi.slidefinish.widget.SlideLayout.SlideDirection;
 
 public abstract class SlideVerticalFinishFragment extends BaseSlideFinishFragment {
 	

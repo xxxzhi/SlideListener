@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.houzhi.slidefinish.R;
 import com.houzhi.slidefinish.fragment.BaseSlideFinishFragment;
-import com.houzhi.slidefinish.widget.SlideFrameLayout;
+import com.houzhi.slidefinish.widget.SlideLayout;
 
 public class DemoSlideBottomFinishFragment extends BaseSlideFinishFragment {
 
@@ -23,11 +23,11 @@ public class DemoSlideBottomFinishFragment extends BaseSlideFinishFragment {
 		View view = inflater.inflate(R.layout.fragment_blank, container, false);
 		TextView tv = (TextView)view.findViewById(R.id.tv_hint);
 		tv.setText(R.string.slide_bottom);
-		SlideFrameLayout slideFrameLayout = new SlideFrameLayout(getActivity());
-		slideFrameLayout.addView(view);
-		slideFrameLayout.setDirection(SlideFrameLayout.SlideDirection.BOTTOM);
+		SlideLayout slideLayout = new SlideLayout(getActivity());
+		slideLayout.addView(view);
+		slideLayout.setDirection(SlideLayout.SlideDirection.BOTTOM);
 
-		slideFrameLayout.setOnSlideListener(new SlideFrameLayout.OnSlideListener() {
+		slideLayout.setOnSlideListener(new SlideLayout.OnSlideListener() {
 
 			@Override
 			public void onSlideFinish() {
@@ -38,9 +38,9 @@ public class DemoSlideBottomFinishFragment extends BaseSlideFinishFragment {
 
 
 
-		slideFrameLayout.setBackgroundColor(bgColor);
+		slideLayout.setBackgroundColor(bgColor);
 
-		return slideFrameLayout;
+		return slideLayout;
 
 
 //		view.setOnTouchListener(new View.OnTouchListener() {
@@ -54,7 +54,7 @@ public class DemoSlideBottomFinishFragment extends BaseSlideFinishFragment {
 	}
 
 	//滑动方向
-	private SlideFrameLayout.SlideDirection direction = SlideFrameLayout.SlideDirection.BOTTOM;
+	private SlideLayout.SlideDirection direction = SlideLayout.SlideDirection.BOTTOM;
 
 
 

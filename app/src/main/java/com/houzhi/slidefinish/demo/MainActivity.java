@@ -19,50 +19,24 @@ import com.houzhi.slidefinish.demo.fragment.DemoSlideLeftFinishFragment;
 import com.houzhi.slidefinish.demo.fragment.DemoSlideRightFinishFragment;
 import com.houzhi.slidefinish.fragment.BaseSlideFinishFragment;
 
-public class MainActivity extends FragmentActivity implements BaseSlideFinishFragment.SlideFragmentFinishListener,View.OnClickListener{
-	FragmentManager fragmentManager = null;
+public class MainActivity extends FragmentActivity implements View.OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
 		
-		fragmentManager = getSupportFragmentManager();
 
-		FragmentTransaction transaction =fragmentManager.beginTransaction();
-
-		
-		transaction.add(R.id.content, DemoSlideHFinishFragment.newInstance(Color.RED), "first");
-
-		transaction.add(R.id.content, DemoSlideLeftFinishFragment.newInstance(Color.GREEN), "green");
-
-//		transaction.add(R.id.content, DemoSlideTopFinishFragment1.newInstance(Color.YELLOW), "YELLOW");
-		transaction.add(R.id.content, DemoSlideBottomFinishFragment.newInstance(Color.MAGENTA), "MAGENTA");
-
-		transaction.add(R.id.content, DemoSlideRightFinishFragment.newInstance(Color.BLUE), "first");
-		
-		
-		transaction.commit();
-		
-		
 		
 		findViewById(R.id.bt1).setOnClickListener(this);
 		findViewById(R.id.bt2).setOnClickListener(this);
+		findViewById(R.id.bt3).setOnClickListener(this);
 	}
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		Log.i("Activity","onTouchEvent--"+event.getAction());
+		Log.i("Activity", "onTouchEvent--" + event.getAction());
 		return super.onTouchEvent(event);
-	}
-
-	@Override
-	public void onSlideFragmentFinish(Fragment fragment) {
-		FragmentTransaction transaction =fragmentManager.beginTransaction();
-		
-		transaction.remove(fragment);
-		
-		transaction.commit();
 	}
 
 	@Override

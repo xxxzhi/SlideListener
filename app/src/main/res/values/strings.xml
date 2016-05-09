@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">QQEmailTransDemo</string>
+    <string name="app_name">SlideLayout</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="action_settings">Settings</string>
@@ -14,5 +14,6 @@
     <string name="test_slide_activity">test slide for finish Activity</string>
     <string name="slide_fragment_end">oh! all fragment have been removed</string>
     <string name="title_activity_test_view_pager">TestViewPagerActivity</string>
+    <string name="title_activity_test_slide_fragment">TestSlideFragmentActivity</string>
 
 </resources>

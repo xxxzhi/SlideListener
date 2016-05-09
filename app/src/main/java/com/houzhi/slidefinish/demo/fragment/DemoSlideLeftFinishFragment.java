@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.houzhi.slidefinish.R;
 import com.houzhi.slidefinish.fragment.BaseSlideFinishFragment;
-import com.houzhi.slidefinish.widget.SlideFrameLayout;
+import com.houzhi.slidefinish.widget.SlideLayout;
 
 public class DemoSlideLeftFinishFragment extends BaseSlideFinishFragment {
 
@@ -24,11 +24,11 @@ public class DemoSlideLeftFinishFragment extends BaseSlideFinishFragment {
 		TextView tv = (TextView)view.findViewById(R.id.tv_hint);
 		tv.setText(R.string.slide_left);
 
-		SlideFrameLayout slideFrameLayout = new SlideFrameLayout(getActivity());
-		slideFrameLayout.addView(view);
-		slideFrameLayout.setDirection(SlideFrameLayout.SlideDirection.LEFT);
+		SlideLayout slideLayout = new SlideLayout(getActivity());
+		slideLayout.addView(view);
+		slideLayout.setDirection(SlideLayout.SlideDirection.LEFT);
 
-		slideFrameLayout.setOnSlideListener(new SlideFrameLayout.OnSlideListener() {
+		slideLayout.setOnSlideListener(new SlideLayout.OnSlideListener() {
 
 			@Override
 			public void onSlideFinish() {
@@ -36,8 +36,8 @@ public class DemoSlideLeftFinishFragment extends BaseSlideFinishFragment {
 						.onSlideFragmentFinish(DemoSlideLeftFinishFragment.this);
 			}
 		});
-		slideFrameLayout.setBackgroundColor(bgColor);
-		return slideFrameLayout;
+		slideLayout.setBackgroundColor(bgColor);
+		return slideLayout;
 
 	}
 

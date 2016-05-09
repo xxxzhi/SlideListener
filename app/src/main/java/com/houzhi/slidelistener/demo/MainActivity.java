@@ -9,12 +9,13 @@ import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import com.houzhi.slidelistener.R;
 import com.houzhi.slidelistener.demo.fragment.BaseSlideFinishFragment;
 import com.houzhi.slidelistener.demo.fragment.DemoSlideBottomFinishScrollViewFragment;
 import com.houzhi.slidelistener.demo.fragment.DemoSlideHFinishFragment;
-import com.houzhi.slidelistener.demo.fragment.DemoSlideLeftFinishButtonFragment;
+import com.houzhi.slidelistener.demo.fragment.DemoSlideTopFinishButtonFragment;
 import com.houzhi.slidelistener.demo.fragment.DemoSlideLeftFinishViewPagerFragment;
 import com.houzhi.slidelistener.demo.fragment.DemoSlideRightFinishHScrollViewFragment;
 import com.houzhi.slidelistener.demo.fragment.DemoSlideTopFinishFragment;
@@ -38,6 +39,7 @@ public class MainActivity extends FragmentActivity implements BaseSlideFinishFra
 
             @Override
             public void onDirectionSlide() {
+                Toast.makeText(MainActivity.this,"Activity Finish",Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
@@ -56,9 +58,10 @@ public class MainActivity extends FragmentActivity implements BaseSlideFinishFra
 
 
         transaction.add(R.id.content, DemoSlideHFinishFragment.newInstance(Color.RED), "HORIZONTAL");
-        transaction.add(R.id.content, DemoSlideTopFinishFragment.newInstance(Color.YELLOW), "TOP");
+        transaction.add(R.id.content, DemoSlideTopFinishButtonFragment.newInstance(Color.GREEN), "LEFT");
+//        transaction.add(R.id.content, DemoSlideTopFinishFragment.newInstance(Color.YELLOW), "TOP");
         transaction.add(R.id.content, DemoSlideBottomFinishScrollViewFragment.newInstance(Color.MAGENTA), "BOTTOM");
-        transaction.add(R.id.content, DemoSlideLeftFinishButtonFragment.newInstance(Color.GREEN), "LEFT");
+
         transaction.add(R.id.content, DemoSlideLeftFinishViewPagerFragment.newInstance(Color.parseColor("#A6A6A6")), "DemoSlideLeftFinishViewPagerFragment");
         transaction.add(R.id.content, DemoSlideRightFinishHScrollViewFragment.newInstance(Color.BLUE), "RIGHT");
 

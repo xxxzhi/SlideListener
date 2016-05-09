@@ -4,6 +4,13 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/tv_hint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/slide_finish_activity"
+        android:textAppearance="?android:textAppearanceLarge" />
 
     <FrameLayout
         android:id="@+id/content"

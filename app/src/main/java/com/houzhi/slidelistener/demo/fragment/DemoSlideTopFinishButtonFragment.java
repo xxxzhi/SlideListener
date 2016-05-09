@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.houzhi.slidelistener.R;
 import com.houzhi.slidelistener.widget.DirectionSlideListenerLayout;
 
-public class DemoSlideLeftFinishButtonFragment extends BaseDemoSlideFinishFragment {
+public class DemoSlideTopFinishButtonFragment extends BaseDemoSlideFinishFragment {
 
 
 	@Nullable
@@ -18,18 +18,18 @@ public class DemoSlideLeftFinishButtonFragment extends BaseDemoSlideFinishFragme
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_only_button, container, false);
 		TextView tv = (TextView)view.findViewById(R.id.tv_hint);
-		tv.setText(R.string.slide_left);
+		tv.setText(R.string.slide_top);
 
 		DirectionSlideListenerLayout slideLayout = new DirectionSlideListenerLayout(getActivity());
 		slideLayout.addView(view);
-		slideLayout.setDirection(DirectionSlideListenerLayout.SlideDirection.LEFT);
+		slideLayout.setDirection(DirectionSlideListenerLayout.SlideDirection.TOP);
 
 		slideLayout.setOnSlideListener(new DirectionSlideListenerLayout.OnDirectionSlideListener() {
 
 			@Override
 			public void onDirectionSlide() {
 				mOnFragmentWantFinishListener
-						.onSlideFragmentFinish(DemoSlideLeftFinishButtonFragment.this);
+						.onSlideFragmentFinish(DemoSlideTopFinishButtonFragment.this);
 			}
 		});
 		slideLayout.setBackgroundColor(bgColor);
@@ -37,15 +37,15 @@ public class DemoSlideLeftFinishButtonFragment extends BaseDemoSlideFinishFragme
 
 	}
 
-	public static DemoSlideLeftFinishButtonFragment newInstance(int bgColor) {
-		DemoSlideLeftFinishButtonFragment fragment = new DemoSlideLeftFinishButtonFragment();
+	public static DemoSlideTopFinishButtonFragment newInstance(int bgColor) {
+		DemoSlideTopFinishButtonFragment fragment = new DemoSlideTopFinishButtonFragment();
 		Bundle args = new Bundle();
 		args.putInt(ARG_BG_COLOR, bgColor);
 		fragment.setArguments(args);
 		return fragment;
 	}
 
-	public DemoSlideLeftFinishButtonFragment() {
+	public DemoSlideTopFinishButtonFragment() {
 	}
 
 

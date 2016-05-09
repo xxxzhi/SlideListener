@@ -22,7 +22,7 @@ public class DemoSlideLeftFinishViewPagerFragment extends BaseDemoSlideFinishFra
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_test_view_pager, container, false);
         TextView tv = (TextView) view.findViewById(R.id.tv_hint);
-        tv.setText(R.string.slide_left);
+        tv.setText(R.string.slide_left_viewpager);
 
         ViewPager vPager = (ViewPager) view.findViewById(R.id.vp);
         vPager.setAdapter(new TestPagerAdapter(getChildFragmentManager()));

@@ -15,7 +15,7 @@ public class DemoSlideRightFinishHScrollViewFragment extends BaseDemoSlideFinish
 	@Nullable
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_blank, container, false);
+		View view = inflater.inflate(R.layout.fragment_h_scrollview, container, false);
 		TextView tv = (TextView)view.findViewById(R.id.tv_hint);
 		tv.setText(R.string.slide_right);
 
@@ -32,6 +32,7 @@ public class DemoSlideRightFinishHScrollViewFragment extends BaseDemoSlideFinish
 			}
 		});
 		slideLayout.setBackgroundColor(bgColor);
+		slideLayout.setOnlyBorderValid(true);
 		return slideLayout;
 
 	}

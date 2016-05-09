@@ -25,7 +25,7 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tv_hint">
+        android:layout_above="@id/tv_hint">
 
         <LinearLayout
             android:layout_width="match_parent"

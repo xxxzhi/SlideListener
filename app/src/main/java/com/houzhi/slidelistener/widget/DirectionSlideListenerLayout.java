@@ -67,7 +67,7 @@ public class DirectionSlideListenerLayout extends FrameLayout {
         this.edgeLengthForSlide = edgeLengthForSlide;
     }
 
-    private boolean onlyBorderValid;
+    private boolean onlyBorderValid = true;
 
 
     public boolean isOnlyBorderValid() {
@@ -136,10 +136,10 @@ public class DirectionSlideListenerLayout extends FrameLayout {
             isFirstMoveEvent = false;
             isMove = true;
 
-//            Log.i(LOGTAG, "checkHorizontalMove---beginX: " + beginX + ",getEdgeFlags:" + event.getEdgeFlags());
+            Log.i(LOGTAG, "checkHorizontalMove---beginX: " + beginX + ",getEdgeFlags:" + event.getEdgeFlags()+",width"+getWidth());
             // only the event slide from border can move at normal
             if (isOnlyBorderValid() && childHasRespond) {
-//                Log.i(LOGTAG, "checkHorizontalMove : enter check" );
+                Log.i(LOGTAG, "checkHorizontalMove : enter check" );
                 switch (direction) {
                     case RIGHT:
 //                        if(event.getEdgeFlags() != MotionEvent.EDGE_LEFT){
@@ -151,7 +151,8 @@ public class DirectionSlideListenerLayout extends FrameLayout {
                         break;
                     case LEFT:
 //                        if(event.getEdgeFlags() != MotionEvent.EDGE_RIGHT){
-                        if (beginX < saveParams.width - getEdgeLengthForSlide()) {
+                        if (beginX < getWidth() - getEdgeLengthForSlide()) {
+                            Log.i(LOGTAG, "checkHorizontalMove : not move" );
                             isMove = false;
                             return false;
                         }

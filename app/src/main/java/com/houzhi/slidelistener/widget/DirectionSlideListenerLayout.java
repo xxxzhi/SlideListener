@@ -129,8 +129,8 @@ public class DirectionSlideListenerLayout extends FrameLayout {
 
 
     private boolean checkHorizontalMove(MotionEvent event) {
-        Log.i(LOGTAG, "checkHorizontalMove---" + event.getAction());
-        if (event.getAction() != MotionEvent.ACTION_MOVE) return false;
+        Log.i(LOGTAG, "checkHorizontalMove---" + event.getActionMasked());
+        if (event.getActionMasked() != MotionEvent.ACTION_MOVE) return false;
 
         if (isFirstMoveEvent && !isMove) {
             isFirstMoveEvent = false;
@@ -192,7 +192,7 @@ public class DirectionSlideListenerLayout extends FrameLayout {
 
 
     private boolean checkVerticalMove(MotionEvent event) {
-        if (event.getAction() != MotionEvent.ACTION_MOVE) return false;
+        if (event.getActionMasked() != MotionEvent.ACTION_MOVE) return false;
 
         if (isFirstMoveEvent && !isMove) {// only the first action_move to check whether this action move or not.
             isFirstMoveEvent = false;
@@ -257,7 +257,7 @@ public class DirectionSlideListenerLayout extends FrameLayout {
         Log.i(LOGTAG, "slideHorizontalFinish--" + "    ");
         float moveDis = 0;
 
-        switch (event.getAction()) {
+        switch (event.getActionMasked()) {
             case MotionEvent.ACTION_DOWN:
                 if (isAnimationRunning) return false;
                 return true;
@@ -333,7 +333,7 @@ public class DirectionSlideListenerLayout extends FrameLayout {
     private boolean slideVerticalFinish(View v, MotionEvent event) {
 //        Log.i(LOGTAG, "slideVerticalFinish--" + "    ");
         float moveDis = 0;
-        switch (event.getAction()) {
+        switch (event.getActionMasked()) {
             case MotionEvent.ACTION_DOWN:
                 if (isAnimationRunning) return false;
                 return true;
@@ -548,11 +548,11 @@ public class DirectionSlideListenerLayout extends FrameLayout {
         if(!isEnableListenerSlide()) return false;
 
 
-        Log.i(LOGTAG, "touch onInterceptTouchEvent---" + event.getAction() + ",getEdgeFlags:" + event.getEdgeFlags());
+        Log.i(LOGTAG, "touch onInterceptTouchEvent---" + event.getActionMasked() + ",getEdgeFlags:" + event.getEdgeFlags());
         //当为MotionEvent.ACTION_MOVE时,
         // 如果子类不消耗当前事件流，那么onInterceptTouchEvent将不会被调用,也就是说只有子类会消耗这次事件流，才会调用onInterceptTouchEvent
 
-        switch (event.getAction()) {
+        switch (event.getActionMasked()) {
             case MotionEvent.ACTION_DOWN:
                 childHasRespond = false;
                 if (isAnimationRunning) return false;

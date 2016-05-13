@@ -24,7 +24,7 @@ public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sa
   DirectionSlideListenerLayout slideLayout = new DirectionSlideListenerLayout(getActivity());
   slideLayout.addView(view);
   slideLayout.setDirection(DirectionSlideListenerLayout.SlideDirection.BOTTOM); //往下的方向
-
+  slideLayout.setOnlyBorderValid(true); //设置只有按到边缘才滑动，默认为true，只有在子类消费了事件才会生效，否则按中间也一样。
   slideLayout.setOnSlideListener(new DirectionSlideListenerLayout.OnDirectionSlideListener() {
 
       @Override
